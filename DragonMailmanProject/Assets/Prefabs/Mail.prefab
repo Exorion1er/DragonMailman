@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6174951754082846199}
   - component: {fileID: 1018420970283650120}
   - component: {fileID: 6833438311602286304}
-  - component: {fileID: 7667371568428128857}
+  - component: {fileID: 5515043051909465287}
   - component: {fileID: 2218869664318722403}
+  - component: {fileID: 680395702151467847}
   m_Layer: 0
   m_Name: Mail
   m_TagString: Untagged
@@ -92,8 +93,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7667371568428128857
-BoxCollider:
+--- !u!135 &5515043051909465287
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -107,11 +108,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2218869664318722403
 MonoBehaviour:
@@ -129,3 +130,21 @@ MonoBehaviour:
   bounceAmplitude: 0.3
   rotateSpeed: 65
   floorOffset: 1
+--- !u!114 &680395702151467847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715039236702346298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85304d26efbd2e7cba1771d3943a2877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  initialSpeed: 1
+  acceleration: 1
+  maxSpeed: 60
+  pickupDistance: 0.2
+  tumbleDegreesPerSecond: 360
+  axisDriftDegreesPerSecond: 30
