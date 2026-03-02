@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,8 +16,8 @@ public class CameraFollow : MonoBehaviour
     public LayerMask collisionLayers;
     public float cameraRadius;
     
-    private float rotationX = 0;
-    private float rotationY = 0;
+    private float rotationX;
+    private float rotationY;
     private Vector3 currentRotation;
     private Vector3 smoothingVelocity;
 
