@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 166440505}
   - component: {fileID: 166440507}
   - component: {fileID: 166440506}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tail_Fourth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 223768476}
   - component: {fileID: 223768478}
   - component: {fileID: 223768477}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Neck_Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1061,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 407920475}
   - component: {fileID: 407920476}
   - component: {fileID: 407920477}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tail_Third
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1832,7 +1832,7 @@ GameObject:
   - component: {fileID: 511525317}
   - component: {fileID: 511525318}
   - component: {fileID: 511525319}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tail_Second
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1997,7 +1997,7 @@ GameObject:
   - component: {fileID: 517919614}
   - component: {fileID: 517919615}
   - component: {fileID: 517919616}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2047,7 +2047,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2138,7 +2138,7 @@ ConfigurableJoint:
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
-    positionSpring: 2500
+    positionSpring: 15000
     positionDamper: 1
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -2730,7 +2730,7 @@ GameObject:
   - component: {fileID: 696377014}
   - component: {fileID: 696377016}
   - component: {fileID: 696377015}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Neck_Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3130,7 +3130,7 @@ GameObject:
   - component: {fileID: 718764892}
   - component: {fileID: 718764894}
   - component: {fileID: 718764893}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_Low_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3691,7 +3691,7 @@ GameObject:
   - component: {fileID: 787101345}
   - component: {fileID: 787101346}
   - component: {fileID: 787101347}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_High_BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3855,8 +3855,8 @@ GameObject:
   m_Component:
   - component: {fileID: 809295056}
   - component: {fileID: 809295058}
-  - component: {fileID: 809295057}
   - component: {fileID: 809295059}
+  - component: {fileID: 809295057}
   m_Layer: 3
   m_Name: Dragon
   m_TagString: Untagged
@@ -3898,7 +3898,6 @@ MonoBehaviour:
   cam: {fileID: 330585545}
   moveSpeed: 6
   faceCameraYaw: 1
-  invertFacing: 1
   yawTurnSpeedDegPerSec: 360
   hover: 1
   hoverHeight: 1.9
@@ -3938,7 +3937,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!136 &809295059
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4223,7 +4222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 918811755}
   - component: {fileID: 918811756}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PickupTrigger
   m_TagString: PickupTrigger
   m_Icon: {fileID: 0}
@@ -4258,7 +4257,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -4401,7 +4400,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -4420,7 +4419,7 @@ GameObject:
   - component: {fileID: 1016180741}
   - component: {fileID: 1016180742}
   - component: {fileID: 1016180743}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_High_FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4924,7 +4923,7 @@ GameObject:
   - component: {fileID: 1142709928}
   - component: {fileID: 1142709929}
   - component: {fileID: 1142709930}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5068,7 +5067,7 @@ ConfigurableJoint:
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
-    positionSpring: 10000
+    positionSpring: 15000
     positionDamper: 1
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -5401,7 +5400,7 @@ GameObject:
   - component: {fileID: 1313477045}
   - component: {fileID: 1313477047}
   - component: {fileID: 1313477046}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_Low_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5899,7 +5898,7 @@ GameObject:
   - component: {fileID: 1359503662}
   - component: {fileID: 1359503663}
   - component: {fileID: 1359503664}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tail_First
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6151,7 +6150,7 @@ GameObject:
   - component: {fileID: 1434515630}
   - component: {fileID: 1434515632}
   - component: {fileID: 1434515631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_Low_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6347,7 +6346,7 @@ GameObject:
   - component: {fileID: 1479134726}
   - component: {fileID: 1479134728}
   - component: {fileID: 1479134727}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wing_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6927,7 +6926,7 @@ GameObject:
   - component: {fileID: 1679478571}
   - component: {fileID: 1679478573}
   - component: {fileID: 1679478572}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wing_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7440,7 +7439,7 @@ GameObject:
   - component: {fileID: 1876280513}
   - component: {fileID: 1876280515}
   - component: {fileID: 1876280514}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_High_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7695,7 +7694,7 @@ GameObject:
   - component: {fileID: 1896242865}
   - component: {fileID: 1896242867}
   - component: {fileID: 1896242866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7969,7 +7968,7 @@ GameObject:
   - component: {fileID: 2025383006}
   - component: {fileID: 2025383007}
   - component: {fileID: 2025383008}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_High_BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8189,7 +8188,7 @@ GameObject:
   - component: {fileID: 2064523973}
   - component: {fileID: 2064523975}
   - component: {fileID: 2064523974}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Neck_High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8354,7 +8353,7 @@ GameObject:
   - component: {fileID: 2073900342}
   - component: {fileID: 2073900344}
   - component: {fileID: 2073900343}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Leg_Low_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}

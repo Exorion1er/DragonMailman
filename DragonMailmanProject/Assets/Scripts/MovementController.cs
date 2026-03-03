@@ -15,7 +15,6 @@ public class MovementController : MonoBehaviour
     [Header("Facing")]
     public bool faceCameraYaw;
 
-    public bool invertFacing;
     public float yawTurnSpeedDegPerSec;
 
     [Header("Hover (goal height)")]
@@ -57,8 +56,7 @@ public class MovementController : MonoBehaviour
 
             if (camForward.sqrMagnitude > 1e-6f)
             {
-                Vector3 desiredForward = camForward.normalized;
-                if (invertFacing) desiredForward = -desiredForward;
+                Vector3 desiredForward = -camForward.normalized;
 
                 Quaternion targetYaw = Quaternion.LookRotation(desiredForward, Vector3.up);
                 Quaternion nextRot = Quaternion.RotateTowards(rb.rotation, targetYaw,
