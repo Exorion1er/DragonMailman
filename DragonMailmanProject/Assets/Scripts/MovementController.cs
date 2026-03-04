@@ -8,7 +8,7 @@ public class MovementController : MonoBehaviour
     public Rigidbody rb;
 
     public InputActionAsset inputAsset;
-    public Camera cam;
+    public Transform camTransform;
 
     [Header("Goal Motion")]
     public float moveSpeed;
@@ -25,6 +25,15 @@ public class MovementController : MonoBehaviour
     public float hoverRayLength;
     public LayerMask groundLayers;
 
+    [Header("Physics")]
+    public float gravity;
+
+    public float flyAcceleration;
+    public float maxFallSpeed;
+
+    [Header("Smoothing")]
+    public float verticalSnapSpeed;
+
     [Header("Collision")]
     public bool collideGoal;
 
@@ -32,22 +41,20 @@ public class MovementController : MonoBehaviour
     public float collisionSkin;
     public bool slideAlongWalls;
 
-    private Transform camTransform;
+    private InputAction flyAction;
+    private bool isGrounded;
     private InputAction moveAction;
+    private float verticalVelocity;
 
     private void Awake()
     {
-        if (!rb) rb = GetComponent<Rigidbody>();
-        if (cam) camTransform = cam.transform;
-
         moveAction = inputAsset.FindActionMap("Player").FindAction("Move");
+        flyAction = inputAsset.FindActionMap("Player").FindAction("Jump");
     }
 
     private void FixedUpdate()
     {
-        if (!rb || !camTransform) return;
-
-        // 1. Handle Rotation
+        // Handle Rotation
         if (faceCameraYaw)
         {
             // Project camera forward onto the horizontal XZ plane
@@ -61,28 +68,54 @@ public class MovementController : MonoBehaviour
             }
         }
 
-        // 2. Handle Movement
+        bool flyActionPressed = flyAction.IsPressed();
+        if (flyActionPressed)
+            verticalVelocity += flyAcceleration * Time.fixedDeltaTime;
+        else if (!isGrounded) verticalVelocity -= gravity * Time.fixedDeltaTime;
+
+        verticalVelocity = Mathf.Clamp(verticalVelocity, -maxFallSpeed, maxFallSpeed);
+
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 moveDir = CalculateCameraRelativeDir(input);
+        Vector3 displacement = moveDir * moveSpeed + Vector3.up * verticalVelocity;
+        Vector3 targetPos = rb.position + displacement * Time.fixedDeltaTime;
 
-        Vector3 targetPos = rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime);
-
-        // 3. Hover Logic
-        if (hover)
+        isGrounded = false;
+        Vector3 rayStart = new(targetPos.x, rb.position.y + 0.1f, targetPos.z);
+        if (hover && Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, hoverRayLength, groundLayers,
+                QueryTriggerInteraction.Ignore))
         {
-            if (Physics.Raycast(targetPos + Vector3.up * 2f, Vector3.down, out RaycastHit hit, hoverRayLength,
-                    groundLayers, QueryTriggerInteraction.Ignore))
-                targetPos.y = hit.point.y + hoverHeight;
+            float floorY = hit.point.y + hoverHeight;
+
+            if (targetPos.y <= floorY + 0.1f && !flyActionPressed)
+            {
+                isGrounded = true;
+
+                if (verticalVelocity < 0) verticalVelocity = 0;
+                if (targetPos.y < hit.point.y + 0.05f) targetPos.y = hit.point.y + 0.05f;
+                targetPos.y = Mathf.MoveTowards(targetPos.y, floorY, verticalSnapSpeed * Time.fixedDeltaTime);
+
+                if (Mathf.Approximately(targetPos.y, floorY)) verticalVelocity = 0;
+            }
         }
 
-        // 4. Collision / Sliding Logic
+        // Collision / Sliding Logic
         if (collideGoal) targetPos = SolveCollisions(rb.position, targetPos);
 
         rb.MovePosition(targetPos);
     }
 
-    private void OnEnable() => moveAction?.Enable();
-    private void OnDisable() => moveAction?.Disable();
+    private void OnEnable()
+    {
+        moveAction?.Enable();
+        flyAction?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction?.Disable();
+        flyAction?.Disable();
+    }
 
     private Vector3 CalculateCameraRelativeDir(Vector2 input)
     {
