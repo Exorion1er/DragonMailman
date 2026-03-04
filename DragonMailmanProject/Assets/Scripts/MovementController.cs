@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
 public class MovementController : MonoBehaviour
 {
     [Header("--- References ---")]
@@ -94,13 +93,12 @@ public class MovementController : MonoBehaviour
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 moveForwardPlanar = Vector3.ProjectOnPlane(camTransform.forward, Vector3.up).normalized;
-        Vector3 lookForward3D = -camTransform.forward;
         float currentSpeed = horizontalVelocity.magnitude;
 
         HandleFlapping(ref currentSpeed);
         HandleGliderPhysics(camTransform.forward.y, ref currentSpeed);
         HandleSteering(input, moveForwardPlanar, ref currentSpeed);
-        HandleRotation(lookForward3D, moveForwardPlanar, input.x);
+        HandleRotation(camTransform.transform.forward, moveForwardPlanar, input.x);
 
         Vector3 displacement = horizontalVelocity + Vector3.up * verticalVelocity;
         Vector3 targetPos = rb.position + displacement * Time.fixedDeltaTime;
