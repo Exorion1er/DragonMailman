@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MovementController : MonoBehaviour
 {
     [Header("References")]
@@ -17,131 +18,114 @@ public class MovementController : MonoBehaviour
 
     public float yawTurnSpeedDegPerSec;
 
-    [Header("Hover (goal height)")]
+    [Header("Hover")]
     public bool hover;
 
     public float hoverHeight;
     public float hoverRayLength;
     public LayerMask groundLayers;
 
-    [Header("Goal Collision (anti-ghosting)")]
+    [Header("Collision")]
     public bool collideGoal;
 
     public LayerMask obstacleLayers;
     public float collisionSkin;
     public bool slideAlongWalls;
 
+    private Transform camTransform;
     private InputAction moveAction;
-    private Vector2 moveInput;
 
     private void Awake()
     {
-        moveAction = inputAsset.FindActionMap("Player").FindAction("Move");
-    }
+        if (!rb) rb = GetComponent<Rigidbody>();
+        if (cam) camTransform = cam.transform;
 
-    private void Update()
-    {
-        moveInput = moveAction.ReadValue<Vector2>();
+        moveAction = inputAsset.FindActionMap("Player").FindAction("Move");
     }
 
     private void FixedUpdate()
     {
-        if (!rb || !cam)
-            return;
+        if (!rb || !camTransform) return;
 
+        // 1. Handle Rotation
         if (faceCameraYaw)
         {
-            Vector3 camForward = cam.transform.forward;
-            camForward.y = 0f;
+            // Project camera forward onto the horizontal XZ plane
+            Vector3 camForward = Vector3.ProjectOnPlane(-camTransform.forward, Vector3.up).normalized;
 
-            if (camForward.sqrMagnitude > 1e-6f)
+            if (camForward != Vector3.zero)
             {
-                Vector3 desiredForward = -camForward.normalized;
-
-                Quaternion targetYaw = Quaternion.LookRotation(desiredForward, Vector3.up);
-                Quaternion nextRot = Quaternion.RotateTowards(rb.rotation, targetYaw,
-                    yawTurnSpeedDegPerSec * Time.fixedDeltaTime);
-                rb.MoveRotation(nextRot);
+                Quaternion targetRot = Quaternion.LookRotation(camForward, Vector3.up);
+                rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot,
+                    yawTurnSpeedDegPerSec * Time.fixedDeltaTime));
             }
         }
 
-        // Camera-relative planar basis
-        Vector3 forward = cam.transform.forward;
-        Vector3 right = cam.transform.right;
+        // 2. Handle Movement
+        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector3 moveDir = CalculateCameraRelativeDir(input);
 
-        forward.y = 0f;
-        right.y = 0f;
+        Vector3 targetPos = rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime);
 
-        forward = forward.sqrMagnitude > 0f ? forward.normalized : Vector3.forward;
-        right = right.sqrMagnitude > 0f ? right.normalized : Vector3.right;
-
-        Vector3 inputDir = forward * moveInput.y + right * moveInput.x;
-        if (inputDir.sqrMagnitude > 1f) inputDir.Normalize();
-
-        Vector3 nextPos = rb.position + inputDir * (moveSpeed * Time.fixedDeltaTime);
-
+        // 3. Hover Logic
         if (hover)
-            if (Physics.Raycast(nextPos + Vector3.up * 2f, Vector3.down, out RaycastHit hit, hoverRayLength,
+        {
+            if (Physics.Raycast(targetPos + Vector3.up * 2f, Vector3.down, out RaycastHit hit, hoverRayLength,
                     groundLayers, QueryTriggerInteraction.Ignore))
-                nextPos.y = hit.point.y + hoverHeight;
+                targetPos.y = hit.point.y + hoverHeight;
+        }
 
-        if (collideGoal) nextPos = ComputeNonGhostingPosition(rb.position, nextPos);
+        // 4. Collision / Sliding Logic
+        if (collideGoal) targetPos = SolveCollisions(rb.position, targetPos);
 
-        rb.MovePosition(nextPos);
+        rb.MovePosition(targetPos);
     }
 
-    private void OnEnable()
+    private void OnEnable() => moveAction?.Enable();
+    private void OnDisable() => moveAction?.Disable();
+
+    private Vector3 CalculateCameraRelativeDir(Vector2 input)
     {
-        moveAction.Enable();
+        if (input.sqrMagnitude < 0.001f) return Vector3.zero;
+
+        Vector3 forward = Vector3.ProjectOnPlane(camTransform.forward, Vector3.up).normalized;
+        Vector3 right = Vector3.ProjectOnPlane(camTransform.right, Vector3.up).normalized;
+
+        Vector3 dir = forward * input.y + right * input.x;
+        return dir.sqrMagnitude > 1f ? dir.normalized : dir;
     }
 
-    private void OnDisable()
+    private Vector3 SolveCollisions(Vector3 from, Vector3 to)
     {
-        moveAction.Disable();
-    }
+        Vector3 path = to - from;
+        float distance = path.magnitude;
+        if (distance < 0.001f) return to;
 
-    private Vector3 ComputeNonGhostingPosition(Vector3 from, Vector3 to)
-    {
-        Vector3 delta = to - from;
-        float dist = delta.magnitude;
-        if (dist < 1e-6f)
-            return to;
+        Vector3 direction = path / distance;
 
-        Vector3 dir = delta / dist;
+        if (rb.SweepTest(direction, out RaycastHit hit, distance + collisionSkin, QueryTriggerInteraction.Ignore))
+        {
+            if (((1 << hit.collider.gameObject.layer) & obstacleLayers) == 0) return to;
 
-        // Sweep the rigidbody's colliders along the path
-        if (rb.SweepTest(dir, out RaycastHit hit, dist + collisionSkin, QueryTriggerInteraction.Ignore))
-            // Filter by layers (SweepTest doesn't take a LayerMask)
-            if (((1 << hit.collider.gameObject.layer) & obstacleLayers.value) != 0)
+            float moveDist = Mathf.Max(0, hit.distance - collisionSkin);
+            Vector3 contactPoint = from + direction * moveDist;
+
+            if (!slideAlongWalls) return contactPoint;
+
+            Vector3 remainingPath = to - contactPoint;
+            Vector3 slidePath = Vector3.ProjectOnPlane(remainingPath, hit.normal);
+
+            if (slidePath.magnitude < 0.001f) return contactPoint;
+
+            if (rb.SweepTest(slidePath.normalized, out RaycastHit slideHit, slidePath.magnitude + collisionSkin,
+                    QueryTriggerInteraction.Ignore))
             {
-                float allowed = Mathf.Max(0f, hit.distance - collisionSkin);
-                Vector3 clampedPos = from + dir * allowed;
-
-                if (!slideAlongWalls)
-                    return clampedPos;
-
-                // Simple slide: remove the component going into the wall, try remaining motion once.
-                Vector3 remaining = to - clampedPos;
-                Vector3 slide = Vector3.ProjectOnPlane(remaining, hit.normal);
-
-                float slideDist = slide.magnitude;
-                if (slideDist > 1e-6f)
-                {
-                    Vector3 slideDir = slide / slideDist;
-
-                    if (rb.SweepTest(slideDir, out RaycastHit hit2, slideDist + collisionSkin,
-                            QueryTriggerInteraction.Ignore) &&
-                        ((1 << hit2.collider.gameObject.layer) & obstacleLayers.value) != 0)
-                    {
-                        float allowed2 = Mathf.Max(0f, hit2.distance - collisionSkin);
-                        return clampedPos + slideDir * allowed2;
-                    }
-
-                    return clampedPos + slide;
-                }
-
-                return clampedPos;
+                float slideDist = Mathf.Max(0, slideHit.distance - collisionSkin);
+                return contactPoint + slidePath.normalized * slideDist;
             }
+
+            return contactPoint + slidePath;
+        }
 
         return to;
     }
