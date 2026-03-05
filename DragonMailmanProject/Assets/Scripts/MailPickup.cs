@@ -3,6 +3,7 @@ using UnityEngine;
 public class MailPickup : MonoBehaviour
 {
     public GameController gameController;
+    public GameObject beam;
     public float initialSpeed;
     public float acceleration;
     public float maxSpeed;
@@ -67,6 +68,7 @@ public class MailPickup : MonoBehaviour
         currentSpeed = initialSpeed;
         tumbleAxis = Random.onUnitSphere;
         idle.enabled = false;
+        beam.SetActive(false);
     }
 
     private void AddMailToPlayer()

@@ -10456,6 +10456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4090e5d06e19d9fdeaa8267eefd33066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  gameController: {fileID: 1735355939}
   mailPrefab: {fileID: 7715039236702346298, guid: b3df716feb0b089b09b36b34a4e4aad2, type: 3}
   mailParent: {fileID: 649052428}
 --- !u!1 &1794654191

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MailSpawner : MonoBehaviour
 {
+    public GameController gameController;
     public GameObject mailPrefab;
     public GameObject mailParent;
 
@@ -42,6 +43,7 @@ public class MailSpawner : MonoBehaviour
     private void Spawn(int index)
     {
         lastIndex = index;
-        Instantiate(mailPrefab, spawnPoints[index], Quaternion.identity, mailParent.transform);
+        GameObject gob = Instantiate(mailPrefab, spawnPoints[index], Quaternion.identity, mailParent.transform);
+        gob.GetComponent<MailPickup>().gameController = gameController;
     }
 }
