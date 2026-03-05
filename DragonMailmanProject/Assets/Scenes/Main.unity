@@ -9353,6 +9353,7 @@ GameObject:
   - component: {fileID: 543450652198236216}
   - component: {fileID: 919132148542909060}
   - component: {fileID: 919132148542909059}
+  - component: {fileID: 919132148542909061}
   m_Layer: 3
   m_Name: NEW DRAGON
   m_TagString: Untagged
@@ -9382,11 +9383,11 @@ MonoBehaviour:
   flapForwardPush: 3
   flapCooldown: 0.4
   pitchResponsiveness: 10
-  diveAcceleration: 60
-  climbDrag: 10
+  diveAcceleration: 100
+  climbDrag: 8
   stallSpeed: 5
   turnInertia: 3
-  coastingDrag: 10
+  coastingDrag: 7
   turnDrag: 30
   faceCameraYaw: 1
   yawTurnSpeedDegPerSec: 720
@@ -9434,6 +9435,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &919132148542909061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148542909058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea9caf178e8a4cb39fec079aeef5a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoostController
+  movementController: {fileID: 919132148542909059}
+  inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  boostAmount: 10
+  boostCooldown: 1
 --- !u!1 &936305670990936397
 GameObject:
   m_ObjectHideFlags: 0
