@@ -8,6 +8,6 @@ public class DebugUIController : MonoBehaviour
 
     private void Update()
     {
-        speedText.text = $"H. Velocity: {movementController.hSpeed}\n" + $"V. Velocity: {movementController.vSpeed}";
+        speedText.text = $"H. Velocity: {movementController.hSpeed}\nV. Velocity: {movementController.vSpeed}";
     }
 }
