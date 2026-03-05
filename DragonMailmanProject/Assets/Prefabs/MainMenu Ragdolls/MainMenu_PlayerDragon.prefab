@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 428801395404916176}
   - component: {fileID: 4269542796951662861}
   - component: {fileID: 1984045133982931949}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3211824317219270793}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 1119991026656156678}
   - component: {fileID: 9045561287376383079}
   - component: {fileID: 1714615518062387305}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Body_middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4412539961024144177}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 4984240156110920871}
   - component: {fileID: 4822638699418640643}
   - component: {fileID: 7490727875215298221}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Body_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6129206000711457044}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_FrontLeft_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8961699085509709425}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_WingRight_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 8011046873571132724}
   - component: {fileID: 2150819318302677794}
   - component: {fileID: 5439106376607348112}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_Low_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -788,7 +788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7430737765813374580}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 3940844414599056658}
   - component: {fileID: 4759692588844710556}
   - component: {fileID: 4444659328250640998}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_WingRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2520363753711652743}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_BackRight_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 3484977636707533532}
   - component: {fileID: 9215586219694975399}
   - component: {fileID: 8423565396531240123}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4422168103770801128}
   - component: {fileID: 5985784215023674793}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_collarBell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1302,7 +1302,7 @@ GameObject:
   - component: {fileID: 7955244776600837725}
   - component: {fileID: 2494127775755456585}
   - component: {fileID: 4164810985241571604}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_High_BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 2912678873852854600}
   - component: {fileID: 6591685776627344529}
   - component: {fileID: 6166255963455273051}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_Low_BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,7 +1626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8875056020744654486}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_BackLeft_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 6589607035889660374}
   - component: {fileID: 4474334636041372805}
   - component: {fileID: 8620471058154426210}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Tail_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1822,7 +1822,7 @@ GameObject:
   - component: {fileID: 4570080346905606394}
   - component: {fileID: 2401775290988803076}
   - component: {fileID: 3998761208062103708}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_High_BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1984,7 +1984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063750460945946857}
   - component: {fileID: 7262071249209081235}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2104,7 +2104,7 @@ GameObject:
   - component: {fileID: 2010962280607188777}
   - component: {fileID: 1556990549754309162}
   - component: {fileID: 428943919087600096}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2265,7 +2265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2456158559719139696}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_WingLeft_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2297,7 +2297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4676912411150048265}
   - component: {fileID: 2099716974958946859}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2417,7 +2417,7 @@ GameObject:
   - component: {fileID: 6396814821131738933}
   - component: {fileID: 2583101016521922831}
   - component: {fileID: 2628538836052114152}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2580,7 +2580,7 @@ GameObject:
   - component: {fileID: 4984942421811670328}
   - component: {fileID: 5208185381217811506}
   - component: {fileID: 2796954323381230380}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2742,7 +2742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8898047456084527343}
   - component: {fileID: 2137670513112786836}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_wingL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 6051024581734690458}
   - component: {fileID: 2944699070946498809}
   - component: {fileID: 1270076795061339021}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Neck_middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3024,7 +3024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 749416420221338417}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3058,7 +3058,7 @@ GameObject:
   - component: {fileID: 200225166972226706}
   - component: {fileID: 7378733397292619507}
   - component: {fileID: 374621688251776472}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Tail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3221,7 +3221,7 @@ GameObject:
   - component: {fileID: 1255676497667485928}
   - component: {fileID: 387369340381022971}
   - component: {fileID: 2532486830209586790}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_WingLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3384,7 +3384,7 @@ GameObject:
   - component: {fileID: 4235126484297485996}
   - component: {fileID: 4423714676756936803}
   - component: {fileID: 865499799719125945}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_High_FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3546,7 +3546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7291744876540369859}
   - component: {fileID: 6190996461865003816}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DEBUG CAPSULE COLLIDER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3602,7 +3602,7 @@ GameObject:
   - component: {fileID: 8205060738355374450}
   - component: {fileID: 4748881336773350791}
   - component: {fileID: 5106943455100032275}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Neck_High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3765,7 +3765,7 @@ GameObject:
   - component: {fileID: 2566269120714032469}
   - component: {fileID: 2397477318929272748}
   - component: {fileID: 379421796522498957}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_High_FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3927,8 +3927,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6586102345207793856}
   - component: {fileID: 1208457066406310475}
-  m_Layer: 3
-  m_Name: PlayerDragon
+  m_Layer: 0
+  m_Name: MainMenu_PlayerDragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3990,7 +3990,7 @@ GameObject:
   - component: {fileID: 6597312069483316226}
   - component: {fileID: 4431701658162042881}
   - component: {fileID: 2596256271284523652}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_Low_BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4152,7 +4152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4449073544646958709}
   - component: {fileID: 5866179637537578630}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_wingR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4270,7 +4270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7799229894171003117}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Bell_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4303,7 +4303,7 @@ GameObject:
   - component: {fileID: 8569048806283870278}
   - component: {fileID: 9130140285294372166}
   - component: {fileID: 7759998464303545213}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Bell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4410,7 +4410,7 @@ GameObject:
   - component: {fileID: 9195098555130958499}
   - component: {fileID: 4236441200785521000}
   - component: {fileID: 3996186293844987589}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4571,7 +4571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8926931434757221206}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Tail_4_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4604,7 +4604,7 @@ GameObject:
   - component: {fileID: 5315660960142492688}
   - component: {fileID: 5833674362569132385}
   - component: {fileID: 6139431351461887739}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_Low_FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4765,7 +4765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221416513310798908}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4797,7 +4797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3165170106200047070}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Leg_End_FrontRight_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4830,7 +4830,7 @@ GameObject:
   - component: {fileID: 7611831442309458809}
   - component: {fileID: 4326225622729704500}
   - component: {fileID: 2946469807218317867}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Neck_lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4993,7 +4993,7 @@ GameObject:
   - component: {fileID: 3143939631991802732}
   - component: {fileID: 6455568479749879351}
   - component: {fileID: 7896702500444532832}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Body_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5161,7 +5161,7 @@ GameObject:
   - component: {fileID: 3004349166354724783}
   - component: {fileID: 674883758335042421}
   - component: {fileID: 9048878939548909153}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Hermes_Tail_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
