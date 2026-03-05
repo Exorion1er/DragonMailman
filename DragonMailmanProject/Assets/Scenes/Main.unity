@@ -2685,9 +2685,9 @@ MonoBehaviour:
   backpedalSpeed: 7
   strafeSpeed: 10
   turnSpeed: 720
-  minLaunchVelocity: 15
-  maxLaunchVelocity: 40
-  maxChargeTime: 1.5
+  minLaunchVelocity: 30
+  maxLaunchVelocity: 100
+  maxChargeTime: 3
 --- !u!114 &440688730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2701,20 +2701,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingMovement
   camTransform: {fileID: 330585546}
+  hover: {fileID: 440688731}
   maxFlightSpeed: 100
   baseGravity: 15
   maxTerminalVelocity: 40
   pitchResponsiveness: 10
-  diveAcceleration: 100
-  climbDrag: 10
-  stallSpeed: 5
-  turnInertia: 3
-  coastingDrag: 10
-  turnDrag: 30
+  diveAcceleration: 60
+  climbDrag: 20
+  stallSpeed: 15
+  turnInertia: 2
+  coastingDrag: 2
+  turnDrag: 20
   faceCameraYaw: 1
   yawTurnSpeedDegPerSec: 720
   bankIntensity: 5
-  launchRecoveryTime: 1
+  launchRecoveryTime: 2
+  airBrakeDrag: 20
+  maxFlareAngle: 45
+  parachutingFallSpeed: 10
+  airCatchForce: 25
+  momentumRetention: 2
 --- !u!114 &440688731
 MonoBehaviour:
   m_ObjectHideFlags: 0

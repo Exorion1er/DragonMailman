@@ -7,6 +7,7 @@ namespace Movement
     {
         [Header("--- References ---")]
         public Transform camTransform;
+        public HoverController hover;
 
         [Header("--- Base Flight Physics ---")]
         public float maxFlightSpeed = 100f;
@@ -16,13 +17,13 @@ namespace Movement
         [Header("--- Gliding ---")]
         public float pitchResponsiveness = 10f;
         public float diveAcceleration = 60f;
-        public float climbDrag = 10f;
-        public float stallSpeed = 5f;
+        public float climbDrag = 20f;
+        public float stallSpeed = 15f;
 
         [Header("--- Steering & Momentum ---")]
-        public float turnInertia = 3f;
-        public float coastingDrag = 10f;
-        public float turnDrag = 30f;
+        public float turnInertia = 2f;
+        public float coastingDrag = 2f;
+        public float turnDrag = 20f;
 
         [Header("--- Rotation & Visuals ---")]
         public bool faceCameraYaw = true;
@@ -30,16 +31,18 @@ namespace Movement
         public float bankIntensity = 5f;
 
         [Header("--- Launch Transition ---")]
-        public float launchRecoveryTime = 1f;
-        private HoverController hover;
+        public float launchRecoveryTime = 2f;
+
+        [Header("--- Belly Flop ---")]
+        public float airBrakeDrag = 20f;
+        public float maxFlareAngle = 45f;
+        public float parachutingFallSpeed = 10f;
+        public float airCatchForce = 25f;
+        public float momentumRetention = 2f;
+
         private float launchRecoveryTimer;
-
         private InputAction moveAction;
-
-        private void Awake()
-        {
-            hover = GetComponent<HoverController>();
-        }
+        private float smoothedBrakeInput;
 
         private void Start()
         {
@@ -50,11 +53,18 @@ namespace Movement
         {
             Vector2 input = moveAction.ReadValue<Vector2>();
             Vector3 moveForwardPlanar = Vector3.ProjectOnPlane(camTransform.forward, Vector3.up).normalized;
-            float currentSpeed = hover.horizontalVelocity.magnitude;
 
-            HandleGliderPhysics(camTransform.forward.y, ref currentSpeed);
-            HandleSteering(input, moveForwardPlanar, ref currentSpeed);
-            HandleRotation(camTransform.forward, moveForwardPlanar, input.x);
+            UpdateFlightState(input.y);
+
+            float forwardSpeed = CalculateForwardEnergy(camTransform.forward);
+
+            Vector3 targetVelocity = CalculateTargetVelocity(camTransform.forward, forwardSpeed);
+
+            ApplyVelocity(targetVelocity);
+
+            float currentHorizontalSpeed = hover.horizontalVelocity.magnitude;
+            HandleSteering(input, moveForwardPlanar, ref currentHorizontalSpeed);
+            HandleRotation(moveForwardPlanar, input.x);
 
             Vector3 displacement = hover.horizontalVelocity + Vector3.up * hover.verticalVelocity;
             Vector3 targetPos = hover.rb.position + displacement * Time.fixedDeltaTime;
@@ -70,54 +80,87 @@ namespace Movement
             launchRecoveryTimer = launchRecoveryTime;
         }
 
-        private void HandleGliderPhysics(float pitch, ref float currentHorizontalSpeed)
+        private void UpdateFlightState(float verticalInput)
         {
             if (launchRecoveryTimer > 0f) launchRecoveryTimer -= Time.fixedDeltaTime;
 
+            float rawBrake = Mathf.Clamp01(-verticalInput);
+            smoothedBrakeInput = Mathf.MoveTowards(smoothedBrakeInput, rawBrake, Time.fixedDeltaTime * 2f);
+        }
+
+        private float CalculateForwardEnergy(Vector3 camForward)
+        {
             Vector3 current3DVelocity = hover.horizontalVelocity + Vector3.up * hover.verticalVelocity;
-            float trueSpeed = current3DVelocity.magnitude;
+            float speed = current3DVelocity.magnitude;
+            float pitch = camForward.y;
 
-            switch (pitch)
+            if (pitch < -0.05f)
+                speed += Mathf.Abs(pitch) * diveAcceleration * Time.fixedDeltaTime;
+            else if (pitch > 0.05f) speed -= pitch * climbDrag * Time.fixedDeltaTime;
+
+            float turnPenalty = 0f;
+            if (hover.horizontalVelocity.sqrMagnitude > 1f)
             {
-                case < -0.01f:
-                    trueSpeed += Mathf.Abs(pitch) * diveAcceleration * Time.fixedDeltaTime;
-                    break;
-                case > 0.01f:
-                    trueSpeed -= pitch * climbDrag * Time.fixedDeltaTime;
-                    break;
+                Vector3 currentHeading = hover.horizontalVelocity.normalized;
+                Vector3 targetHeading = Vector3.ProjectOnPlane(camForward, Vector3.up).normalized;
+
+                if (targetHeading.sqrMagnitude > 0.1f)
+                {
+                    float turnAngle = Vector3.Angle(currentHeading, targetHeading);
+
+                    float turnSeverity = Mathf.InverseLerp(5f, 90f, turnAngle);
+                    turnPenalty = turnDrag * turnSeverity;
+                }
             }
 
-            if (hover.horizontalVelocity.sqrMagnitude > 0.1f)
+            float dynamicBrakePower = airBrakeDrag * speed * 0.1f;
+            float currentDrag = coastingDrag + dynamicBrakePower * smoothedBrakeInput + turnPenalty;
+
+            speed = Mathf.MoveTowards(speed, 0f, currentDrag * Time.fixedDeltaTime);
+
+            return Mathf.Clamp(speed, 0f, maxFlightSpeed);
+        }
+
+        private Vector3 CalculateTargetVelocity(Vector3 camForward, float forwardSpeed)
+        {
+            float speedFactor = Mathf.InverseLerp(0f, maxFlightSpeed, forwardSpeed);
+            float currentFlareAngle = smoothedBrakeInput * maxFlareAngle * speedFactor;
+            Vector3 flareDir = Quaternion.AngleAxis(-currentFlareAngle, camTransform.right) * camForward;
+
+            float flareSpeedPenalty = Mathf.Lerp(1f, 0.4f, smoothedBrakeInput);
+            Vector3 targetVelocity = flareDir * (forwardSpeed * flareSpeedPenalty);
+
+            float liftFactor = Mathf.InverseLerp(stallSpeed, stallSpeed * 3f, forwardSpeed);
+            float effectiveGravity = Mathf.Lerp(baseGravity, 0f, liftFactor);
+            targetVelocity.y -= effectiveGravity;
+
+            if (smoothedBrakeInput > 0.01f && forwardSpeed > stallSpeed)
             {
-                Vector3 flightDir = hover.horizontalVelocity.normalized;
-                Vector3 lookDir = new Vector3(camTransform.forward.x, 0, camTransform.forward.z).normalized;
-                float turnSeverity = Mathf.InverseLerp(0f, 90f, Vector3.Angle(flightDir, lookDir));
-                trueSpeed -= turnSeverity * turnDrag * Time.fixedDeltaTime;
+                float liftPotential = Mathf.InverseLerp(stallSpeed, maxFlightSpeed, forwardSpeed);
+                targetVelocity.y += liftPotential * airCatchForce * smoothedBrakeInput;
             }
 
-            trueSpeed -= coastingDrag * Time.fixedDeltaTime;
-            trueSpeed = trueSpeed > maxFlightSpeed
-                ? Mathf.MoveTowards(trueSpeed, maxFlightSpeed, coastingDrag * 2f * Time.fixedDeltaTime)
-                : Mathf.Clamp(trueSpeed, 0, maxFlightSpeed);
+            float maxFallSpeed = Mathf.Lerp(maxTerminalVelocity, parachutingFallSpeed, smoothedBrakeInput);
+            if (targetVelocity.y < -maxFallSpeed) targetVelocity.y = -maxFallSpeed;
 
-            Vector3 camForward = camTransform.forward;
-            float targetVVel = camForward.y * trueSpeed;
-            float targetHVel = new Vector3(camForward.x, 0, camForward.z).magnitude * trueSpeed;
+            return targetVelocity;
+        }
 
-            float stallPenalty = Mathf.InverseLerp(stallSpeed, 0f, trueSpeed);
-            targetVVel -= baseGravity * stallPenalty;
+        private void ApplyVelocity(Vector3 targetVelocity)
+        {
+            Vector3 current3DVelocity = hover.horizontalVelocity + Vector3.up * hover.verticalVelocity;
 
             float recoveryFactor = launchRecoveryTime > 0f
                 ? 1f - Mathf.Clamp01(launchRecoveryTimer / launchRecoveryTime)
                 : 1f;
-            float effectivePitchResponsiveness = pitchResponsiveness * recoveryFactor;
+            float responsiveness =
+                Mathf.Lerp(pitchResponsiveness, momentumRetention, smoothedBrakeInput) * recoveryFactor;
 
-            hover.verticalVelocity = Mathf.Lerp(hover.verticalVelocity, targetVVel,
-                effectivePitchResponsiveness * Time.fixedDeltaTime);
-            hover.verticalVelocity = Mathf.Clamp(hover.verticalVelocity, -maxTerminalVelocity, maxTerminalVelocity);
+            Vector3 nextVelocity =
+                Vector3.Lerp(current3DVelocity, targetVelocity, responsiveness * Time.fixedDeltaTime);
 
-            currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, targetHVel,
-                effectivePitchResponsiveness * Time.fixedDeltaTime);
+            hover.verticalVelocity = nextVelocity.y;
+            hover.horizontalVelocity = new Vector3(nextVelocity.x, 0, nextVelocity.z);
         }
 
         private void HandleSteering(Vector2 input, Vector3 moveForwardPlanar, ref float currentSpeed)
@@ -149,12 +192,20 @@ namespace Movement
             hover.horizontalVelocity = alignedDir * currentSpeed;
         }
 
-        private void HandleRotation(Vector3 lookForward3D, Vector3 moveForwardPlanar, float lateralInput)
+        private void HandleRotation(Vector3 moveForwardPlanar, float lateralInput)
         {
             if (!faceCameraYaw || moveForwardPlanar == Vector3.zero) return;
 
+            Vector3 flightDir = hover.horizontalVelocity + Vector3.up * hover.verticalVelocity;
+            if (flightDir.sqrMagnitude < 0.1f) flightDir = moveForwardPlanar;
+
+            float speed = flightDir.magnitude;
+            float levelOutFactor = Mathf.InverseLerp(stallSpeed * 1.5f, 0f, speed);
+
+            Vector3 visualForward = Vector3.Slerp(flightDir.normalized, moveForwardPlanar, levelOutFactor);
+
             Quaternion bankRot = Quaternion.Euler(0, 0, -lateralInput * bankIntensity);
-            Quaternion targetRot = Quaternion.LookRotation(lookForward3D, Vector3.up) * bankRot;
+            Quaternion targetRot = Quaternion.LookRotation(visualForward, Vector3.up) * bankRot;
 
             hover.rb.MoveRotation(Quaternion.RotateTowards(hover.rb.rotation, targetRot,
                 yawTurnSpeedDegPerSec * Time.fixedDeltaTime));
