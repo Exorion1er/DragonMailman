@@ -2615,12 +2615,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea9caf178e8a4cb39fec079aeef5a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoostController
+  hover: {fileID: 440688731}
   flying: {fileID: 440688730}
   inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   chargePrefab: {fileID: 7436772409577002406, guid: 010b10bc3224ffb269e1915a1dc80444, type: 3}
   chargesParent: {fileID: 174470723}
   chargesCount: 3
-  boostAmount: 10
+  boostAmount: 30
   boostCooldown: 3
 --- !u!54 &440688727
 Rigidbody:
