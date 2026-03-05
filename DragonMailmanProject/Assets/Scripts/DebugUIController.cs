@@ -1,13 +1,14 @@
+using Movement;
 using TMPro;
 using UnityEngine;
 
 public class DebugUIController : MonoBehaviour
 {
-    public MovementController movementController;
+    public HoverController hover;
     public TextMeshProUGUI speedText;
 
     private void Update()
     {
-        speedText.text = $"H. Velocity: {movementController.hSpeed}\nV. Velocity: {movementController.vSpeed}";
+        speedText.text = $"H. Velocity: {hover.horizontalVelocity}\nV. Velocity: {hover.verticalVelocity}";
     }
 }

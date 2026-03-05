@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using Movement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class BoostController : MonoBehaviour
 {
     [Header("References")]
-    public MovementController movementController;
+    public FlyingMovement flying;
     public InputActionAsset inputAsset;
     public GameObject chargePrefab;
     public Transform chargesParent;
@@ -76,7 +77,7 @@ public class BoostController : MonoBehaviour
             {
                 cooldownTimers[i] = boostCooldown;
                 boostCharges[i].SetFill(0f);
-                movementController.ApplySpeedBoost(boostAmount);
+                flying.ApplySpeedBoost(boostAmount);
                 break;
             }
         }

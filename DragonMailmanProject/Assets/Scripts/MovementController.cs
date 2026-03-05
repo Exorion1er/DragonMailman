@@ -13,12 +13,6 @@ public class MovementController : MonoBehaviour
     public float baseGravity = 15f;
     public float maxTerminalVelocity = 40f;
 
-    [Header("--- Flapping ---")]
-    public float flapLiftForce = 12f;
-    public float flapForwardPush = 3f;
-    [Tooltip("How long before you can flap again")]
-    public float flapCooldown = 0.4f;
-
     [Header("--- Gliding ---"),
      Tooltip("How quickly the dragon's flight path aligns with the camera. Higher = snappier.")]
     public float pitchResponsiveness = 10f;
@@ -47,46 +41,42 @@ public class MovementController : MonoBehaviour
     public float verticalSnapSpeed = 5f;
     public LayerMask groundLayers;
 
+    [Header("--- Launch Mechanic ---")]
+    public float minLaunchVelocity = 15f;
+    public float maxLaunchVelocity = 40f;
+    [Tooltip("How many seconds you must hold jump to reach max launch velocity")]
+    public float maxChargeTime = 1.5f;
+    [Tooltip("How long it takes to regain full camera pitch control after launching (prevents snapping)")]
+    public float launchRecoveryTime = 1f;
+
     [Header("--- Collision ---")]
     public bool collideGoal = true;
     public LayerMask obstacleLayers;
     public float collisionSkin = 0.05f;
     public bool slideAlongWalls = true;
 
+    // Launch State
+    private float currentChargeTime;
+
     private InputAction flyAction;
     private Vector3 horizontalVelocity;
-    private float lastFlapTime;
+    private bool isCharging;
+    private float launchRecoveryTimer;
     private InputAction moveAction;
-    private LineRenderer velocityLine;
     private float verticalVelocity;
-    private bool wantsToFlap;
 
     private void Awake()
     {
         moveAction = inputAsset.FindActionMap("Player").FindAction("Move");
         flyAction = inputAsset.FindActionMap("Player").FindAction("Jump");
-
-        // Velocity Arrow (DEBUG)
-        velocityLine = new GameObject("VelocityDebugArrow").AddComponent<LineRenderer>();
-        velocityLine.startWidth = 0.3f;
-        velocityLine.endWidth = 0.0f;
-        velocityLine.material = new Material(Shader.Find("Sprites/Default"));
-        velocityLine.startColor = Color.yellow;
-        velocityLine.endColor = new Color(1f, 0.5f, 0f);
-        velocityLine.positionCount = 2;
-        velocityLine.transform.SetParent(transform);
     }
 
     private void Update()
     {
-        if (flyAction.WasPressedThisFrame() && Time.time >= lastFlapTime + flapCooldown)
-        {
-            wantsToFlap = true;
-            lastFlapTime = Time.time;
-        }
-
         hSpeed = Mathf.RoundToInt(horizontalVelocity.magnitude);
         vSpeed = Mathf.RoundToInt(verticalVelocity);
+
+        HandleLaunchInput();
     }
 
     private void FixedUpdate()
@@ -95,7 +85,6 @@ public class MovementController : MonoBehaviour
         Vector3 moveForwardPlanar = Vector3.ProjectOnPlane(camTransform.forward, Vector3.up).normalized;
         float currentSpeed = horizontalVelocity.magnitude;
 
-        HandleFlapping(ref currentSpeed);
         HandleGliderPhysics(camTransform.forward.y, ref currentSpeed);
         HandleSteering(input, moveForwardPlanar, ref currentSpeed);
         HandleRotation(camTransform.transform.forward, moveForwardPlanar, input.x);
@@ -106,9 +95,6 @@ public class MovementController : MonoBehaviour
         targetPos = HandleGroundingAndHover(targetPos, ref currentSpeed);
 
         if (collideGoal) targetPos = SolveCollisions(rb.position, targetPos);
-
-        // Draw debug velocity arrow
-        DrawVelocityDebug(horizontalVelocity + Vector3.up * verticalVelocity);
         rb.MovePosition(targetPos);
     }
 
@@ -124,82 +110,93 @@ public class MovementController : MonoBehaviour
         flyAction?.Disable();
     }
 
-    private void HandleFlapping(ref float currentSpeed)
+    private void HandleLaunchInput()
     {
-        if (!wantsToFlap) return;
+        if (isGrounded)
+        {
+            if (flyAction.IsPressed())
+            {
+                isCharging = true;
+                currentChargeTime += Time.deltaTime;
+                currentChargeTime = Mathf.Clamp(currentChargeTime, 0f, maxChargeTime);
+            }
+            else if (isCharging) ExecuteLaunch();
+        }
+        else
+        {
+            isCharging = false;
+            currentChargeTime = 0f;
+        }
+    }
 
-        // Give a burst of height. Overwrite if falling to save the player.
-        verticalVelocity = verticalVelocity < 0 ? flapLiftForce : verticalVelocity + flapLiftForce;
+    private void ExecuteLaunch()
+    {
+        isCharging = false;
 
-        // Add a tiny forward bump, but don't exceed max speed just by flapping
-        if (currentSpeed < maxFlightSpeed) currentSpeed += flapForwardPush;
+        float chargePercent = currentChargeTime / maxChargeTime;
+        float launchPower = Mathf.Lerp(minLaunchVelocity, maxLaunchVelocity, chargePercent);
 
-        wantsToFlap = false;
+        verticalVelocity = launchPower;
+
         isGrounded = false;
+        currentChargeTime = 0f;
+
+        // Trigger the recovery timer so we don't snap to the camera immediately
+        launchRecoveryTimer = launchRecoveryTime;
     }
 
     private void HandleGliderPhysics(float pitch, ref float currentHorizontalSpeed)
     {
         if (isGrounded) return;
 
-        // Calculate TRUE 3D speed to manage total energy
+        // Process Launch Recovery Timer
+        if (launchRecoveryTimer > 0f) launchRecoveryTimer -= Time.fixedDeltaTime;
+
         Vector3 current3DVelocity = horizontalVelocity + Vector3.up * verticalVelocity;
         float trueSpeed = current3DVelocity.magnitude;
 
         switch (pitch)
         {
-            // Modify energy based on Pitch
             case < -0.01f:
-                // Diving: Gain speed based on steepness
                 trueSpeed += Mathf.Abs(pitch) * diveAcceleration * Time.fixedDeltaTime;
                 break;
             case > 0.01f:
-                // Climbing: Lose speed based on steepness
                 trueSpeed -= pitch * climbDrag * Time.fixedDeltaTime;
                 break;
         }
 
-        // If we are moving fast, measure the angle between where we are flying and where we are looking
         if (horizontalVelocity.sqrMagnitude > 0.1f)
         {
             Vector3 flightDir = horizontalVelocity.normalized;
             Vector3 lookDir = new Vector3(camTransform.forward.x, 0, camTransform.forward.z).normalized;
-
-            // Calculate the angle (0 = straight ahead, 100 = looking behind us)
             float turnAngle = Vector3.Angle(flightDir, lookDir);
-
-            // Convert the angle to a 0 to 1 scale (Caps out at 90 degrees)
             float turnSeverity = Mathf.InverseLerp(0f, 90f, turnAngle);
-
-            // Bleed speed based on how sharply we are turning
             trueSpeed -= turnSeverity * turnDrag * Time.fixedDeltaTime;
         }
 
-        // Constant air drag over time
         trueSpeed -= coastingDrag * Time.fixedDeltaTime;
         trueSpeed = trueSpeed > maxFlightSpeed
             ? Mathf.MoveTowards(trueSpeed, maxFlightSpeed, coastingDrag * 2f * Time.fixedDeltaTime)
             : Mathf.Clamp(trueSpeed, 0, maxFlightSpeed);
 
-        // Aim the Energy (Calculate goals based on the camera angle)
-        // Vertical goal is exactly the Y-axis of the camera * speed
-        // Horizontal goal is exactly the XZ plane length of the camera * speed
         Vector3 camForward = camTransform.forward;
         float targetVVel = camForward.y * trueSpeed;
         float targetHVel = new Vector3(camForward.x, 0, camForward.z).magnitude * trueSpeed;
 
-        // Stalling Mechanic
-        // If speed drops below 'stallSpeed', gravity takes over and drags the target downward
         float stallPenalty = Mathf.InverseLerp(stallSpeed, 0f, trueSpeed);
         targetVVel -= baseGravity * stallPenalty;
 
-        // Apply smoothly for that "heavy" responsive feel
-        verticalVelocity = Mathf.Lerp(verticalVelocity, targetVVel, pitchResponsiveness * Time.fixedDeltaTime);
+        // Calculate Effective Pitch Responsiveness
+        float recoveryFactor =
+            launchRecoveryTime > 0f ? 1f - Mathf.Clamp01(launchRecoveryTimer / launchRecoveryTime) : 1f;
+        float effectivePitchResponsiveness = pitchResponsiveness * recoveryFactor;
+
+        // Apply velocities using the dampened responsiveness
+        verticalVelocity = Mathf.Lerp(verticalVelocity, targetVVel, effectivePitchResponsiveness * Time.fixedDeltaTime);
         verticalVelocity = Mathf.Clamp(verticalVelocity, -maxTerminalVelocity, maxTerminalVelocity);
 
-        // Output the new horizontal speed for the HandleSteering method to use
-        currentHorizontalSpeed =
-            Mathf.Lerp(currentHorizontalSpeed, targetHVel, pitchResponsiveness * Time.fixedDeltaTime);
+        currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, targetHVel,
+            effectivePitchResponsiveness * Time.fixedDeltaTime);
     }
 
     private void HandleSteering(Vector2 input, Vector3 moveForwardPlanar, ref float currentSpeed)
@@ -244,7 +241,9 @@ public class MovementController : MonoBehaviour
     {
         isGrounded = false;
 
-        if (!enableHover || wantsToFlap) return targetPos;
+        if (!enableHover) return targetPos;
+
+        if (verticalVelocity > 2f) return targetPos;
 
         Vector3 rayStart = new(targetPos.x, rb.position.y + 0.1f, targetPos.z);
 
@@ -307,22 +306,6 @@ public class MovementController : MonoBehaviour
         return to;
     }
 
-    private void DrawVelocityDebug(Vector3 actualVelocity)
-    {
-        Vector3 startPos = rb.position + Vector3.up * 1.0f;
-
-        if (actualVelocity.sqrMagnitude < 0.01f)
-        {
-            if (velocityLine) velocityLine.enabled = false;
-        }
-        else if (velocityLine)
-        {
-            velocityLine.enabled = true;
-            velocityLine.SetPosition(0, startPos);
-            velocityLine.SetPosition(1, startPos + actualVelocity * 0.5f);
-        }
-    }
-
     #region API
 
     [HideInInspector]
@@ -332,6 +315,8 @@ public class MovementController : MonoBehaviour
     [HideInInspector]
     public float vSpeed;
 
+    public float GetChargePercent() => Mathf.Clamp01(currentChargeTime / maxChargeTime);
+
     public void ApplySpeedBoost(float boostAmount)
     {
         Vector3 dir = horizontalVelocity.sqrMagnitude > 0.1f
@@ -339,7 +324,6 @@ public class MovementController : MonoBehaviour
             : Vector3.ProjectOnPlane(camTransform.forward, Vector3.up).normalized;
 
         float currentSpeed = horizontalVelocity.magnitude;
-        // Apply the boost but respect the absolute high-end limit
         float newSpeed = Mathf.Min(currentSpeed + boostAmount, maxFlightSpeed * 3f);
 
         horizontalVelocity = dir * newSpeed;
