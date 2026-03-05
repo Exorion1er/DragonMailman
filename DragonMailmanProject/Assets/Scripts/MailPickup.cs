@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MailPickup : MonoBehaviour
 {
+    public GameController gameController;
     public float initialSpeed;
     public float acceleration;
     public float maxSpeed;
@@ -49,8 +50,7 @@ public class MailPickup : MonoBehaviour
         Vector3 targetPos = player.position;
         transform.position = Vector3.MoveTowards(transform.position, targetPos, currentSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, targetPos) <= pickupDistance)
-            AddMailToPlayer();
+        if (Vector3.Distance(transform.position, targetPos) <= pickupDistance) AddMailToPlayer();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,5 +72,6 @@ public class MailPickup : MonoBehaviour
     private void AddMailToPlayer()
     {
         Destroy(gameObject);
+        gameController.MailPickedUp();
     }
 }
