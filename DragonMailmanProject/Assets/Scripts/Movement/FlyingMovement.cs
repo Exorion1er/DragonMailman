@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -80,6 +81,8 @@ namespace Movement
             launchRecoveryTimer = launchRecoveryTime;
         }
 
+        public event Action<float> OnSharpTurn;
+
         private void UpdateFlightState(float verticalInput)
         {
             if (launchRecoveryTimer > 0f) launchRecoveryTimer -= Time.fixedDeltaTime;
@@ -110,6 +113,8 @@ namespace Movement
 
                     float turnSeverity = Mathf.InverseLerp(5f, 90f, turnAngle);
                     turnPenalty = turnDrag * turnSeverity;
+
+                    if (turnSeverity > 0.1f) OnSharpTurn?.Invoke(turnSeverity);
                 }
             }
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -57,6 +58,8 @@ namespace Movement
         private void OnEnable() => playerMap?.Enable();
         private void OnDisable() => playerMap?.Disable();
 
+        public event Action OnObstacleHit;
+
         public Vector3 ApplyHover(Vector3 targetPos, ref float vSpeed, ref Vector3 hVelocity)
         {
             isGrounded = false;
@@ -108,6 +111,8 @@ namespace Movement
             if (rb.SweepTest(direction, out RaycastHit hit, distance + collisionSkin, QueryTriggerInteraction.Ignore))
             {
                 if (((1 << hit.collider.gameObject.layer) & obstacleLayers) == 0) return to;
+
+                OnObstacleHit?.Invoke();
 
                 float moveDist = Mathf.Max(0, hit.distance - collisionSkin);
                 Vector3 contactPoint = from + direction * moveDist;
