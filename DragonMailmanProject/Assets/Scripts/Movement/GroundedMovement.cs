@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Movement
 {
@@ -7,6 +8,10 @@ namespace Movement
     {
         [Header("--- References ---")]
         public Transform camTransform;
+        public Image chargeFillBar;
+        public GameObject chargeBarParent;
+        public HoverController hover;
+        public InputActionAsset inputAsset;
 
         [Header("--- Ground Speed ---")]
         public float forwardSpeed = 15f;
@@ -17,26 +22,22 @@ namespace Movement
         public float turnSpeed = 720f;
 
         [Header("--- Launch Mechanic ---")]
-        public float minLaunchVelocity = 15f;
-        public float maxLaunchVelocity = 40f;
-        public float maxChargeTime = 1.5f;
+        public float minLaunchVelocity = 30f;
+        public float maxLaunchVelocity = 100f;
+        public float maxChargeTime = 3f;
 
         private float currentChargeTime;
         private InputAction flyAction;
-        private HoverController hover;
         private bool isCharging;
-
         private InputAction moveAction;
-
-        private void Awake()
-        {
-            hover = GetComponent<HoverController>();
-        }
 
         private void Start()
         {
-            moveAction = hover.inputAsset.FindActionMap("Player").FindAction("Move");
-            flyAction = hover.inputAsset.FindActionMap("Player").FindAction("Jump");
+            moveAction = inputAsset.FindActionMap("Player").FindAction("Move");
+            flyAction = inputAsset.FindActionMap("Player").FindAction("Jump");
+
+            chargeBarParent.SetActive(false);
+            chargeFillBar.fillAmount = 0f;
         }
 
         private void Update()
@@ -48,6 +49,9 @@ namespace Movement
                 isCharging = true;
                 currentChargeTime += Time.deltaTime;
                 currentChargeTime = Mathf.Clamp(currentChargeTime, 0f, maxChargeTime);
+
+                if (!chargeBarParent.activeSelf) chargeBarParent.SetActive(true);
+                chargeFillBar.fillAmount = Mathf.Clamp01(currentChargeTime / maxChargeTime);
             }
             else if (isCharging) ExecuteLaunch();
         }
@@ -89,6 +93,8 @@ namespace Movement
         {
             isCharging = false;
             currentChargeTime = 0f;
+
+            chargeBarParent.SetActive(false);
         }
 
         private void ExecuteLaunch()
@@ -104,8 +110,9 @@ namespace Movement
             hover.flyingMovement.TriggerLaunchRecovery();
 
             currentChargeTime = 0f;
-        }
 
-        public float GetChargePercent() => Mathf.Clamp01(currentChargeTime / maxChargeTime);
+            chargeBarParent.SetActive(false);
+            chargeFillBar.fillAmount = 0f;
+        }
     }
 }
