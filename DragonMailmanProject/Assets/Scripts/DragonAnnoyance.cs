@@ -44,6 +44,9 @@ namespace Movement
         public float collisionPenalty = 20f;
         public float collisionCooldown = 0.5f;
 
+        [Header("--- Impact Scaling ---")]
+        public float lethalImpactForce = 40f;
+
         [Header("--- Game Over ---")]
         public float delayBeforeUI = 1.5f;
         public float ejectUpwardForce = 20f;
@@ -62,10 +65,15 @@ namespace Movement
 
             float frameAnnoyance = 0f;
 
+            // Passive drain during flight
             frameAnnoyance += passiveDrainPerSec * Time.deltaTime;
 
+            // Calculate current speed
             float currentSpeed = (hover.horizontalVelocity + Vector3.up * hover.verticalVelocity).magnitude;
-            if (currentSpeed < slowSpeedThreshold) frameAnnoyance += slowSpeedPenaltyPerSec * Time.deltaTime;
+
+            // Only penalize if we are going slow AND we are NOT intentionally belly flopping
+            if (currentSpeed < slowSpeedThreshold && !flying.IsBellyFlopping)
+                frameAnnoyance += slowSpeedPenaltyPerSec * Time.deltaTime;
 
             if (frameAnnoyance > 0) AddAnnoyance(frameAnnoyance);
         }
@@ -88,10 +96,17 @@ namespace Movement
         {
             if (isBuckedOff) return;
 
+            float impactVelocity = (hover.horizontalVelocity + Vector3.up * hover.verticalSnapSpeed).magnitude;
+
             if (Time.time - lastCollisionTime > collisionCooldown)
             {
-                AddAnnoyance(collisionPenalty);
+                float impactRatio = impactVelocity / lethalImpactForce;
+                float dynamicPenalty = Mathf.Pow(impactRatio, 1.2f) * maxAnnoyance;
+                float finalPenalty = Mathf.Max(collisionPenalty, dynamicPenalty);
+
+                AddAnnoyance(finalPenalty);
                 lastCollisionTime = Time.time;
+                Debug.Log($"Impact Speed: {impactVelocity:F2} | Penalty: {finalPenalty:F2}");
             }
         }
 

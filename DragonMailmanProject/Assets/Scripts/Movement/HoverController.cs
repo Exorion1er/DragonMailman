@@ -18,6 +18,8 @@ namespace Movement
         public float hoverRayLength = 3f;
         public float verticalSnapSpeed = 5f;
         public LayerMask groundLayers;
+        public float maxLandingSpeed = 25f;
+        public bool crashOnHardLanding = true;
 
         [Header("--- Collision ---")]
         public bool collideGoal = true;
@@ -25,7 +27,6 @@ namespace Movement
         public float collisionSkin = 0.05f;
         public bool slideAlongWalls = true;
 
-        // Shared physical state passed between Flight and Ground
         [HideInInspector]
         public bool isGrounded;
         [HideInInspector]
@@ -77,19 +78,35 @@ namespace Movement
 
                 if (targetPos.y <= floorY + 0.1f)
                 {
-                    isGrounded = true;
+                    // Calculate our total speed right before hitting the ground
+                    float currentSpeed = (hVelocity + Vector3.up * vSpeed).magnitude;
 
-                    if (vSpeed < 0) vSpeed = 0;
+                    if (currentSpeed <= maxLandingSpeed)
+                    {
+                        isGrounded = true;
 
-                    // Bleed off excess horizontal momentum upon landing
-                    float speed = hVelocity.magnitude;
-                    speed = Mathf.MoveTowards(speed, 0, verticalSnapSpeed * Time.fixedDeltaTime);
-                    hVelocity = hVelocity.normalized * speed;
+                        if (vSpeed < 0) vSpeed = 0;
 
-                    if (targetPos.y < hit.point.y + 0.05f) targetPos.y = hit.point.y + 0.05f;
-                    targetPos.y = Mathf.MoveTowards(targetPos.y, floorY, verticalSnapSpeed * Time.fixedDeltaTime);
+                        // Bleed off excess horizontal momentum upon landing
+                        float speed = hVelocity.magnitude;
+                        speed = Mathf.MoveTowards(speed, 0, verticalSnapSpeed * Time.fixedDeltaTime);
+                        hVelocity = hVelocity.normalized * speed;
 
-                    if (Mathf.Approximately(targetPos.y, floorY)) vSpeed = 0;
+                        if (targetPos.y < hit.point.y + 0.05f) targetPos.y = hit.point.y + 0.05f;
+                        targetPos.y = Mathf.MoveTowards(targetPos.y, floorY, verticalSnapSpeed * Time.fixedDeltaTime);
+
+                        if (Mathf.Approximately(targetPos.y, floorY)) vSpeed = 0;
+                    }
+                    else
+                    {
+                        if (crashOnHardLanding) OnObstacleHit?.Invoke();
+
+                        // Prevent the dragon from clipping through the floor during a nosedive
+                        if (targetPos.y < hit.point.y + 0.05f) targetPos.y = hit.point.y + 0.05f;
+
+                        // Kill downward velocity so they "splat" and slide instead of phasing through the earth
+                        if (vSpeed < 0) vSpeed = 0;
+                    }
                 }
             }
             return targetPos;

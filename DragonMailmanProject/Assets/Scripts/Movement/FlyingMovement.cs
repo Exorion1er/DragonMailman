@@ -44,6 +44,7 @@ namespace Movement
         private float launchRecoveryTimer;
         private InputAction moveAction;
         private float smoothedBrakeInput;
+        public bool IsBellyFlopping => smoothedBrakeInput > 0.1f;
 
         private void Start()
         {
