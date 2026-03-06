@@ -44,14 +44,25 @@ namespace Movement
         {
             if (!hover.isGrounded) return;
 
+            Vector2 moveInput = moveAction.ReadValue<Vector2>();
+            bool isMoving = moveInput.sqrMagnitude > 0.01f;
+
             if (flyAction.IsPressed())
             {
-                isCharging = true;
-                currentChargeTime += Time.deltaTime;
-                currentChargeTime = Mathf.Clamp(currentChargeTime, 0f, maxChargeTime);
+                if (isMoving)
+                {
+                    // Cancel the charge if they start moving
+                    if (isCharging) CancelCharge();
+                }
+                else
+                {
+                    isCharging = true;
+                    currentChargeTime += Time.deltaTime;
+                    currentChargeTime = Mathf.Clamp(currentChargeTime, 0f, maxChargeTime);
 
-                if (!chargeBarParent.activeSelf) chargeBarParent.SetActive(true);
-                chargeFillBar.fillAmount = Mathf.Clamp01(currentChargeTime / maxChargeTime);
+                    if (!chargeBarParent.activeSelf) chargeBarParent.SetActive(true);
+                    chargeFillBar.fillAmount = Mathf.Clamp01(currentChargeTime / maxChargeTime);
+                }
             }
             else if (isCharging) ExecuteLaunch();
         }
@@ -109,8 +120,13 @@ namespace Movement
 
             hover.flyingMovement.TriggerLaunchRecovery();
 
-            currentChargeTime = 0f;
+            CancelCharge();
+        }
 
+        private void CancelCharge()
+        {
+            isCharging = false;
+            currentChargeTime = 0f;
             chargeBarParent.SetActive(false);
             chargeFillBar.fillAmount = 0f;
         }
