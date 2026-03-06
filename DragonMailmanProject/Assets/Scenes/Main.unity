@@ -2495,7 +2495,7 @@ MonoBehaviour:
   inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   distance: 8
   sensitivity: 0.2
-  smoothTime: 0.75
+  smoothTime: 0.25
   minVerticalAngle: -80
   maxVerticalAngle: 80
   collisionLayers:
@@ -12172,10 +12172,10 @@ RectTransform:
   m_Children:
   - {fileID: 245608346}
   - {fileID: 1322641374}
+  - {fileID: 111212779}
   - {fileID: 353335207}
   - {fileID: 651264133}
   - {fileID: 487785398}
-  - {fileID: 111212779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
