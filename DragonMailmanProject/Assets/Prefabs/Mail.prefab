@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5719623128590872265}
   - component: {fileID: 8228124308818643281}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1737620461782016786}
   - component: {fileID: 4623650820719836616}
   - component: {fileID: 7834366729959609022}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 5515043051909465287}
   - component: {fileID: 2218869664318722403}
   - component: {fileID: 680395702151467847}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
