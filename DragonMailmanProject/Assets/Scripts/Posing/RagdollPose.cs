@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Poses
+namespace Posing
 {
     [CreateAssetMenu(fileName = "New Ragdoll Pose", menuName = "Active Ragdoll/Pose Data")]
     public class RagdollPose : ScriptableObject

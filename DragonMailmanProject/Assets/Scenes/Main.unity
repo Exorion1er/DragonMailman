@@ -5995,6 +5995,7 @@ GameObject:
   - component: {fileID: 440688729}
   - component: {fileID: 440688725}
   - component: {fileID: 440688732}
+  - component: {fileID: 440688733}
   m_Layer: 3
   m_Name: PlayerDragon
   m_TagString: Untagged
@@ -6142,8 +6143,9 @@ MonoBehaviour:
   inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   flyingMovement: {fileID: 440688730}
   groundedMovement: {fileID: 440688729}
+  poseController: {fileID: 440688733}
   enableHover: 1
-  hoverHeight: 0.25
+  hoverHeight: 0.3
   hoverRayLength: 3
   verticalSnapSpeed: 5
   groundLayers:
@@ -6202,6 +6204,21 @@ MonoBehaviour:
   onPlayerBuckedOff:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &440688733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440688724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275ebe983cef0fa3f881aad7efb3daf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ragdollController: {fileID: 6489666649555596727}
+  hoverPose: {fileID: 11400000, guid: 8f5c943ec3ed7ec61a49f2eadff30763, type: 2}
+  flyPose: {fileID: 11400000, guid: 90b554239b4fe4e4586ea1d5f9e1b53c, type: 2}
 --- !u!1001 &447483788
 PrefabInstance:
   m_ObjectHideFlags: 0

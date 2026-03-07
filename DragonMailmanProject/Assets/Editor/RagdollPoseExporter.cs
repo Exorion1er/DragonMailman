@@ -1,8 +1,9 @@
 #if UNITY_EDITOR
+using Posing;
 using UnityEditor;
 using UnityEngine;
 
-namespace Poses
+namespace Editor
 {
     public class RagdollPoseExporter : EditorWindow
     {

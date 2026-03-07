@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Poses
+namespace Posing
 {
     public class ActiveRagdollController : MonoBehaviour
     {
@@ -72,8 +72,10 @@ namespace Poses
                 Quaternion finalTargetRot = targetRot;
 
                 if (blendFactor < 1f && previousPose)
+                {
                     if (previousPose.TryGetRotation(jc.jointName, out Quaternion prevRot))
                         finalTargetRot = Quaternion.Slerp(prevRot, targetRot, blendFactor);
+                }
 
                 jc.joint.targetRotation = CalculateTargetRotation(finalTargetRot, jc.startingLocalRotation);
             }

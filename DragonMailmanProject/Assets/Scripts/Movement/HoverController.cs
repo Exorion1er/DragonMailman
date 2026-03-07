@@ -11,10 +11,11 @@ namespace Movement
         public InputActionAsset inputAsset;
         public FlyingMovement flyingMovement;
         public GroundedMovement groundedMovement;
+        public PoseController poseController;
 
         [Header("--- Landing & Hover ---")]
         public bool enableHover = true;
-        public float hoverHeight = 1.4f;
+        public float hoverHeight = 0.3f;
         public float hoverRayLength = 3f;
         public float verticalSnapSpeed = 5f;
         public LayerMask groundLayers;
@@ -48,11 +49,13 @@ namespace Movement
             {
                 groundedMovement.enabled = true;
                 flyingMovement.enabled = false;
+                poseController.SetHoverPose();
             }
             else if (!isGrounded && !flyingMovement.enabled)
             {
                 groundedMovement.enabled = false;
                 flyingMovement.enabled = true;
+                poseController.SetFlyPose();
             }
         }
 
