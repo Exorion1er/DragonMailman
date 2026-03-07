@@ -1157,7 +1157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 65675375}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9392,7 +9392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 440056963}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9411,7 +9411,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1269982934}
   m_Father: {fileID: 8414427122888109237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440688724
@@ -9614,6 +9615,9 @@ MonoBehaviour:
   boost: {fileID: 440688725}
   gameOver: {fileID: 1735355942}
   dragonRB: {fileID: 440688727}
+  mailmanRB: {fileID: 9191244648987244048}
+  mailmanJoint: {fileID: 9191244648987244049}
+  mailman: {fileID: 8414427122888109237}
   annoyanceFillBar: {fileID: 785154491}
   dragonCursor: {fileID: 940835612}
   dragonCursorImage: {fileID: 940835613}
@@ -25919,6 +25923,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 514399502068958976, guid: d1a5a91216817b8848d365622e1ed9b0, type: 3}
   m_PrefabInstance: {fileID: 375014796}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1269982933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269982934}
+  - component: {fileID: 1269982935}
+  m_Layer: 3
+  m_Name: DEBUG CAPSULE COLLIDER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1269982934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269982933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 440056963}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1269982935
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269982933}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.21
+  m_Height: 1.12
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.51, z: -0.42}
 --- !u!4 &1272878521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1810856823671844504, guid: e7bb495d811735940ac31ae13f3d67d9, type: 3}
@@ -42906,7 +42965,7 @@ GameObject:
   - component: {fileID: 8666923953391681878}
   - component: {fileID: 8666923953391681880}
   - component: {fileID: 8666923953391681879}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43106,7 +43165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6759082157756527924}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43140,7 +43199,7 @@ GameObject:
   - component: {fileID: 502736866126049410}
   - component: {fileID: 639048778324429360}
   - component: {fileID: 639048778324429361}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Upper_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43421,7 +43480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914024787755584627}
   - component: {fileID: 7049034148344612832}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mailman_cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43623,7 +43682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222134663522496989}
   - component: {fileID: 8411527047764421663}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mailman_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43657,7 +43716,7 @@ GameObject:
   - component: {fileID: 5619709701026401816}
   - component: {fileID: 5619709701026401817}
   - component: {fileID: 5619709701026401818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Leg_Upper_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43788,7 +43847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4834799237323509697}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Arm_R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44389,7 +44448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3896343440743413315}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Leg_R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44407,7 +44466,7 @@ GameObject:
   - component: {fileID: 3363206631630604622}
   - component: {fileID: 3804992177327742558}
   - component: {fileID: 3804992177327742559}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Body_Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44992,7 +45051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1670800401708942844}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Arm_L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45025,7 +45084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6112492505110518625}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45276,7 +45335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582474665522547968}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Leg_L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45322,7 +45381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2813979082076179452}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45502,7 +45561,7 @@ GameObject:
   - component: {fileID: 4235919128459427146}
   - component: {fileID: 5521981193743797395}
   - component: {fileID: 5521981193743797394}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47326,7 +47385,7 @@ GameObject:
   - component: {fileID: 4846460058447732044}
   - component: {fileID: 6725210069130515803}
   - component: {fileID: 6725210069130515804}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Body_Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47490,7 +47549,7 @@ GameObject:
   - component: {fileID: 7722076656987673246}
   - component: {fileID: 7722076656987673247}
   - component: {fileID: 7722076656987673248}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Upper_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47539,7 +47598,7 @@ GameObject:
   - component: {fileID: 4286877573201640492}
   - component: {fileID: 6854884869864245735}
   - component: {fileID: 6854884869864245736}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Leg_Upper_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48904,7 +48963,7 @@ GameObject:
   - component: {fileID: 1059191756655112192}
   - component: {fileID: 7796929334328004170}
   - component: {fileID: 7796929334328004169}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50048,7 +50107,7 @@ GameObject:
   - component: {fileID: 7068088881513074161}
   - component: {fileID: 8582963917526158709}
   - component: {fileID: 8582963917526158708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50428,7 +50487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2655058970483414540}
   - component: {fileID: 123319745681620218}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mailman_shirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50446,7 +50505,7 @@ GameObject:
   - component: {fileID: 8414427122888109237}
   - component: {fileID: 9191244648987244048}
   - component: {fileID: 9191244648987244049}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MailMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50593,7 +50652,7 @@ GameObject:
   - component: {fileID: 3980140571325593098}
   - component: {fileID: 9201937523483642686}
   - component: {fileID: 9201937523483642685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Human_Lower_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}

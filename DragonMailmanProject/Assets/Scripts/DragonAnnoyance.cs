@@ -14,6 +14,9 @@ public class DragonAnnoyance : MonoBehaviour
     public BoostController boost;
     public GameOverScreenController gameOver;
     public Rigidbody dragonRB;
+    public Rigidbody mailmanRB;
+    public ConfigurableJoint mailmanJoint;
+    public Transform mailman;
 
     [Header("--- UI References ---")]
     public Image annoyanceFillBar;
@@ -147,12 +150,12 @@ public class DragonAnnoyance : MonoBehaviour
         cursorPos.x = Mathf.Lerp(cursorMinX, cursorMaxX, fillAmount);
         dragonCursor.anchoredPosition = cursorPos;
 
-        if (fillAmount < 0.33f)
-            dragonCursorImage.sprite = tameSprite;
-        else if (fillAmount < 0.66f)
-            dragonCursorImage.sprite = annoyedSprite;
-        else
-            dragonCursorImage.sprite = furiousSprite;
+        dragonCursorImage.sprite = fillAmount switch
+        {
+            < 0.33f => tameSprite,
+            < 0.66f => annoyedSprite,
+            _ => furiousSprite
+        };
     }
 
     private IEnumerator GameOverSequence()
@@ -165,9 +168,11 @@ public class DragonAnnoyance : MonoBehaviour
         dragonRB.isKinematic = false;
         dragonRB.useGravity = true;
 
-        // TODO: Add upward force to the MailMan and forward force to the Dragon
-        //Vector3 ejectDirection = transform.forward * ejectForwardForce + Vector3.up * ejectUpwardForce;
-        //hover.rb.AddForce(ejectDirection, ForceMode.VelocityChange);
+        // Add upward force to the MailMan and forward force to the Dragon
+        Destroy(mailmanJoint);
+        mailman.SetParent(null);
+        mailmanRB.AddForce(Vector3.up * ejectUpwardForce, ForceMode.VelocityChange);
+        dragonRB.AddForce(transform.forward * ejectForwardForce, ForceMode.VelocityChange);
 
         // Add random spin
         Vector3 randomTorque =
