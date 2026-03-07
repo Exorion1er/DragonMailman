@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        mailSpawner.SpawnRandomEntity();
+        mailSpawner.SpawnRandomEntity(1);
     }
 
     private void Update()
@@ -21,6 +21,6 @@ public class GameController : MonoBehaviour
     public void MailPickedUp()
     {
         points++;
-        mailSpawner.SpawnRandomEntity();
+        mailSpawner.SpawnRandomEntity(1);
     }
 }

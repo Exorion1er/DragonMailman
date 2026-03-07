@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Entity
@@ -22,24 +23,30 @@ namespace Entity
             }
         }
 
-        public void SpawnRandomEntity()
+        public void SpawnRandomEntity(int amountToSpawn)
         {
-            // If there's only one point, we can't avoid repeating it.
-            if (spawnPoints.Length <= 1)
+            if (spawnPoints.Length == 0) return;
+            int actualAmountToSpawn = Mathf.Min(amountToSpawn, spawnPoints.Length);
+
+            List<int> availableIndices = new();
+            for (int i = 0; i < spawnPoints.Length; i++)
             {
-                Spawn(0);
-                return;
+                // Avoid the last point from the previous wave (if we aren't using every single point)
+                if (actualAmountToSpawn < spawnPoints.Length && i == lastIndex) continue;
+
+                availableIndices.Add(i);
             }
 
-            int randomIndex = lastIndex;
-
-            // Keep picking a new index until it's different from the last one
-            while (randomIndex == lastIndex)
+            for (int i = 0; i < actualAmountToSpawn; i++)
             {
-                randomIndex = Random.Range(0, spawnPoints.Length);
-            }
+                int randomListIndex = Random.Range(0, availableIndices.Count);
+                int chosenSpawnIndex = availableIndices[randomListIndex];
 
-            Spawn(randomIndex);
+                // Remove that index from the pool so we don't spawn two items in the exact same spot
+                availableIndices.RemoveAt(randomListIndex);
+
+                Spawn(chosenSpawnIndex);
+            }
         }
 
         private void Spawn(int index)
@@ -47,7 +54,8 @@ namespace Entity
             lastIndex = index;
             GameObject gob = Instantiate(entityPrefab, spawnPoints[index], Quaternion.identity,
                 entitiesParent.transform);
-            gob.GetComponent<EntityPickup>().gameController = gameController;
+
+            if (gob.TryGetComponent(out EntityPickup pickup)) pickup.gameController = gameController;
         }
     }
 }
