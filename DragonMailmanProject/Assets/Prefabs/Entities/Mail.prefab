@@ -252,9 +252,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   gameController: {fileID: 0}
+  idle: {fileID: 2218869664318722403}
   beam: {fileID: 610428902214028719}
-  initialSpeed: 3
-  acceleration: 5
+  pickupType: 0
+  initialSpeed: 10
+  acceleration: 20
   maxSpeed: 300
   pickupDistance: 0.3
   tumbleDegreesPerSecond: 360

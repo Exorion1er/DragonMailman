@@ -6,7 +6,9 @@ namespace Entity
     public class EntityPickup : MonoBehaviour
     {
         public GameController gameController;
+        public IdleBounceRotate idle;
         public GameObject beam;
+        public PickupType pickupType;
         public float initialSpeed;
         public float acceleration;
         public float maxSpeed;
@@ -15,15 +17,9 @@ namespace Entity
         public float axisDriftDegreesPerSecond;
 
         private float currentSpeed;
-        private IdleBounceRotate idle;
         private bool movingToPlayer;
         private Transform player;
         private Vector3 tumbleAxis;
-
-        private void Start()
-        {
-            idle = GetComponent<IdleBounceRotate>();
-        }
 
         private void Update()
         {
@@ -52,7 +48,7 @@ namespace Entity
             Vector3 targetPos = player.position;
             transform.position = Vector3.MoveTowards(transform.position, targetPos, currentSpeed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, targetPos) <= pickupDistance) AddMailToPlayer();
+            if (Vector3.Distance(transform.position, targetPos) <= pickupDistance) PickedUp();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -69,13 +65,13 @@ namespace Entity
             currentSpeed = initialSpeed;
             tumbleAxis = Random.onUnitSphere;
             idle.enabled = false;
-            beam.SetActive(false);
+            if (beam) beam.SetActive(false);
         }
 
-        private void AddMailToPlayer()
+        private void PickedUp()
         {
             Destroy(gameObject);
-            gameController.MailPickedUp();
+            gameController.EntityPickedUp(pickupType);
         }
     }
 }

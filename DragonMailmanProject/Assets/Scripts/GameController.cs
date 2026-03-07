@@ -1,3 +1,4 @@
+using System;
 using Entity;
 using TMPro;
 using UnityEngine;
@@ -23,15 +24,20 @@ public class GameController : MonoBehaviour
         pointsText.text = $"Points: {points}";
     }
 
-    public void MailPickedUp()
+    public void EntityPickedUp(PickupType type)
     {
-        points++;
-        mailSpawner.SpawnRandomEntity(1);
-    }
-
-    public void FoodPickedUp()
-    {
-        dragonAnnoyance.ReduceAnnoyance(foodAnnoyanceReductionAmount);
-        foodSpawner.SpawnRandomEntity(1);
+        switch (type)
+        {
+            case PickupType.Mail:
+                points++;
+                mailSpawner.SpawnRandomEntity(1);
+                break;
+            case PickupType.Food:
+                dragonAnnoyance.ReduceAnnoyance(foodAnnoyanceReductionAmount);
+                foodSpawner.SpawnRandomEntity(1);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(type), type, null);
+        }
     }
 }

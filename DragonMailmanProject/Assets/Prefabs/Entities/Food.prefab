@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1926208978110147973}
   - component: {fileID: 6781242604506388162}
   - component: {fileID: 2415094407696507489}
+  - component: {fileID: 2090086832181447926}
   m_Layer: 2
   m_Name: Food
   m_TagString: Untagged
@@ -70,6 +71,28 @@ MonoBehaviour:
   bounceSpeed: 3
   bounceAmplitude: 1
   rotateSpeed: 65
+--- !u!114 &2090086832181447926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626288662453544985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85304d26efbd2e7cba1771d3943a2877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gameController: {fileID: 0}
+  idle: {fileID: 2415094407696507489}
+  beam: {fileID: 0}
+  pickupType: 1
+  initialSpeed: 50
+  acceleration: 75
+  maxSpeed: 500
+  pickupDistance: 0.3
+  tumbleDegreesPerSecond: 0
+  axisDriftDegreesPerSecond: 0
 --- !u!1001 &1410150589720750532
 PrefabInstance:
   m_ObjectHideFlags: 0
