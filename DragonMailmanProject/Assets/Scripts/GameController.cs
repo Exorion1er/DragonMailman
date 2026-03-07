@@ -1,15 +1,16 @@
+using Entity;
 using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public MailSpawner mailSpawner;
-    public TextMeshProUGUI pointsText;
     public int points;
+    public TextMeshProUGUI pointsText;
+    public EntitySpawner mailSpawner;
 
     private void Start()
     {
-        mailSpawner.SpawnRandomMail();
+        mailSpawner.SpawnRandomEntity();
     }
 
     private void Update()
@@ -20,6 +21,6 @@ public class GameController : MonoBehaviour
     public void MailPickedUp()
     {
         points++;
-        mailSpawner.SpawnRandomMail();
+        mailSpawner.SpawnRandomEntity();
     }
 }
