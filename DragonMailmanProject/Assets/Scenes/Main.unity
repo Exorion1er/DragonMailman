@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  m_BakeOnSceneLoad: 1
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -267,6 +267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -361,6 +365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de8fb9274fb6491499b06ac4095ef74d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -434,6 +442,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
       propertyPath: m_Name
       value: Barrel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -509,6 +521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -570,6 +586,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
       propertyPath: m_Name
       value: Crate 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -698,6 +718,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
       propertyPath: m_Name
       value: buildingblock_roof (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -906,6 +930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -965,7 +993,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -1008,7 +1036,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &91455102
@@ -1021,7 +1049,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1289,6 +1317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1442,6 +1474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1515,6 +1551,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8db056c6bec067341ac98aaf1337b3bd, type: 3}
       propertyPath: m_Name
       value: Building1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8db056c6bec067341ac98aaf1337b3bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1590,6 +1630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1663,6 +1707,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
       propertyPath: m_Name
       value: Spruce 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2161,7 +2209,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
   m_Padding:
     m_Left: 0
@@ -2229,7 +2277,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -2272,7 +2320,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &181687214
@@ -2285,7 +2333,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2377,6 +2425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2439,6 +2491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2496,7 +2552,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2642,6 +2698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2714,7 +2774,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2851,7 +2911,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3100,6 +3160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3263,6 +3327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3336,6 +3404,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
       propertyPath: m_Name
       value: Spruce 3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3563,6 +3635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3636,6 +3712,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
       propertyPath: m_Name
       value: Building2 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3711,6 +3791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3772,6 +3856,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
       propertyPath: m_Name
       value: buildingblock (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3846,6 +3934,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8db056c6bec067341ac98aaf1337b3bd, type: 3}
       propertyPath: m_Name
       value: Building1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8db056c6bec067341ac98aaf1337b3bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3983,6 +4075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4097,8 +4193,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -4141,7 +4237,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f30a4e239e8ea794d9a7b9c5c565b75d, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: '::'
   target: {fileID: 1712785001834440007}
   inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -4317,7 +4413,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
   m_Padding:
     m_Left: 0
@@ -4429,6 +4525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4518,7 +4618,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4672,6 +4772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4699,7 +4803,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &387724885
 Transform:
@@ -4859,6 +4963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tower4_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d87119c793115e547837168a0d2ce4b3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5005,6 +5113,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
       propertyPath: m_Name
       value: column
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5256,7 +5368,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 5000
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 3.0806e-41, y: 0, z: 0, w: 4.2434876e-32}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -5290,8 +5402,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_CustomShadowLayers: 0
@@ -5319,7 +5431,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc4d76f733087744991913c9d19d5274, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.LensFlareComponentSRP
   m_LensFlareData: {fileID: 11400000, guid: fb4c9c706d9b68764880f20b53215e0d, type: 2}
   version: 0
@@ -5491,6 +5603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5564,6 +5680,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5717,6 +5837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5790,6 +5914,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5865,6 +5993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5938,6 +6070,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
       propertyPath: m_Name
       value: Spruce 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6013,7 +6149,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ea9caf178e8a4cb39fec079aeef5a01, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::BoostController
   hover: {fileID: 440688731}
   flying: {fileID: 440688730}
@@ -6080,7 +6216,7 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e95da2f9ea3b75b1ca342873a8ff61fc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::GroundedMovement
   camTransform: {fileID: 330585546}
   chargeFillBar: {fileID: 1291694597}
@@ -6104,7 +6240,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fb1d1371753de18dbfa0c4d501f49ad, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::FlyingMovement
   camTransform: {fileID: 330585546}
   hover: {fileID: 440688731}
@@ -6137,7 +6273,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b9c2617084cb71ec8e721d4cfd66d75, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::HoverController
   rb: {fileID: 440688727}
   inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -6172,7 +6308,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51ebdd730d7af693385309f9232def5c, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::DragonAnnoyance
   hover: {fileID: 440688731}
   flying: {fileID: 440688730}
@@ -6214,7 +6350,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 275ebe983cef0fa3f881aad7efb3daf0, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: '::'
   ragdollController: {fileID: 6489666649555596727}
   hoverPose: {fileID: 11400000, guid: 8f5c943ec3ed7ec61a49f2eadff30763, type: 2}
@@ -6270,6 +6406,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
       propertyPath: m_Name
       value: buildingblock (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6345,6 +6485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6402,7 +6546,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6560,6 +6704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6621,6 +6769,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 468d79e002e0a314596365e418092773, type: 3}
       propertyPath: m_Name
       value: building5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 468d79e002e0a314596365e418092773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6746,6 +6898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6820,6 +6976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6881,7 +7041,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
@@ -6960,6 +7120,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
       propertyPath: m_Name
       value: Spruce 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7417,6 +7581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7474,7 +7642,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7730,6 +7898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7791,6 +7963,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7914,6 +8090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7983,6 +8163,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6068f57f7c5d7f0479d7c7c7c5a351d5, type: 3}
       propertyPath: m_Name
       value: Bridge_tall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6068f57f7c5d7f0479d7c7c7c5a351d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8242,6 +8426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8301,7 +8489,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -8344,7 +8532,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &608965682
@@ -8357,7 +8545,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8449,6 +8637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8509,7 +8701,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &627736123
 Transform:
@@ -8683,6 +8875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tower4_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e2511a37e4d6334d93fff3d0c6176e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8756,6 +8952,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 15f4c734093b77147961621eb4c07a61, type: 3}
       propertyPath: m_Name
       value: towerblock2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15f4c734093b77147961621eb4c07a61, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8831,6 +9031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building3 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8904,6 +9108,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6068f57f7c5d7f0479d7c7c7c5a351d5, type: 3}
       propertyPath: m_Name
       value: Bridge_tall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6068f57f7c5d7f0479d7c7c7c5a351d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9039,7 +9247,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.1, g: 0.1, b: 0.1, a: 0.39215687}
@@ -9311,6 +9519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9478,6 +9690,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
       propertyPath: m_Name
       value: buildingblock (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9693,6 +9909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock_roof (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9767,6 +9987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerblock2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15f4c734093b77147961621eb4c07a61, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9840,6 +10064,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
       propertyPath: m_Name
       value: Building2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10080,6 +10308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10139,7 +10371,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -10182,7 +10414,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &701769195
@@ -10195,7 +10427,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10408,6 +10640,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
       propertyPath: m_Name
       value: Spruce 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10635,6 +10871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10771,6 +11011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10889,7 +11133,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &737858780
 Transform:
@@ -11063,6 +11307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11145,7 +11393,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &749232889
 Transform:
@@ -11354,6 +11602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock_roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11428,6 +11680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11490,6 +11746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11547,7 +11807,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11857,6 +12117,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
       propertyPath: m_Name
       value: Bridge (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12194,6 +12458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12231,8 +12499,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
@@ -12316,6 +12584,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
       propertyPath: m_Name
       value: buildingblock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12515,6 +12787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12588,6 +12864,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12663,6 +12943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerblock2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15f4c734093b77147961621eb4c07a61, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12736,6 +13020,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12811,6 +13099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building3_roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b69582d818ec0d4c84ffe195c09ee82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12872,6 +13164,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
       propertyPath: m_Name
       value: Rock 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12946,6 +13242,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
       propertyPath: m_Name
       value: Building3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13107,6 +13407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13180,6 +13484,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
       propertyPath: m_Name
       value: Building2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13332,7 +13640,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &908831343
 Transform:
@@ -13491,6 +13799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13565,6 +13877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13622,7 +13938,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13804,6 +14120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8db056c6bec067341ac98aaf1337b3bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13918,6 +14238,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
       propertyPath: m_Name
       value: Rock 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14043,6 +14367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14104,6 +14432,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
       propertyPath: m_Name
       value: Spruce 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14179,6 +14511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14252,6 +14588,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14327,6 +14667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de8fb9274fb6491499b06ac4095ef74d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14400,6 +14744,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
       propertyPath: m_Name
       value: Crate 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14640,6 +14988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14714,6 +15066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14787,6 +15143,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
       propertyPath: m_Name
       value: Building2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14904,6 +15264,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
       propertyPath: m_Name
       value: Crate 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15034,6 +15398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15108,6 +15476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15169,6 +15541,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c548b1930cb3c51428bc318b2a4acf8e, type: 3}
       propertyPath: m_Name
       value: Tree trunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c548b1930cb3c51428bc318b2a4acf8e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15243,6 +15619,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
       propertyPath: m_Name
       value: Building3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15405,6 +15785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15566,6 +15950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15627,6 +16015,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
       propertyPath: m_Name
       value: Rock 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15702,6 +16094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tower4_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d87119c793115e547837168a0d2ce4b3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15764,6 +16160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15823,7 +16223,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -15866,7 +16266,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1091999594
@@ -15879,7 +16279,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -16033,6 +16433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16094,6 +16498,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
       propertyPath: m_Name
       value: buildingblock_roof (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16285,6 +16693,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
       propertyPath: m_Name
       value: Building2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16518,6 +16930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16592,6 +17008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge_tall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6068f57f7c5d7f0479d7c7c7c5a351d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16665,6 +17085,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
       propertyPath: m_Name
       value: Spruce 1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16904,6 +17328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16965,6 +17393,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
       propertyPath: m_Name
       value: Spruce 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17040,6 +17472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17102,6 +17538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17159,7 +17599,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17313,6 +17753,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17441,6 +17885,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
       propertyPath: m_Name
       value: column (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17633,6 +18081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17762,6 +18214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate 2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17860,6 +18316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17917,7 +18377,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17996,6 +18456,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 73bb16886b5154f408d2c9b7f2ce7f81, type: 3}
       propertyPath: m_Name
       value: clocktower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 73bb16886b5154f408d2c9b7f2ce7f81, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18120,6 +18584,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
       propertyPath: m_Name
       value: buildingblock_roof (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18427,6 +18895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18488,6 +18960,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
       propertyPath: m_Name
       value: Spruce 3 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18640,6 +19116,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
       propertyPath: m_Name
       value: Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18928,6 +19408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19199,6 +19683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19256,7 +19744,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -19402,6 +19890,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19463,6 +19955,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
       propertyPath: m_Name
       value: Crate 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19717,6 +20213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19943,6 +20443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2_roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19129331ca4c69940b6f81e85e54ea05, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20017,6 +20521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20079,6 +20587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20140,6 +20652,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
       propertyPath: m_Name
       value: Barrel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20215,6 +20731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ff89227ad6d6450408f3e73d637a2d09, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20276,6 +20796,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
       propertyPath: m_Name
       value: buildingblock_roof (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20339,6 +20863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20400,6 +20928,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
       propertyPath: m_Name
       value: Rock 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20749,6 +21281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20882,6 +21418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20956,6 +21496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ff89227ad6d6450408f3e73d637a2d09, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20983,7 +21527,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1514490917
 Transform:
@@ -21271,7 +21815,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1551460167
 Transform:
@@ -21403,7 +21947,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -21522,7 +22066,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
@@ -21539,7 +22083,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
@@ -21663,6 +22207,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
       propertyPath: m_Name
       value: Building2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21800,6 +22348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8db056c6bec067341ac98aaf1337b3bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21827,7 +22379,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1594460767
 Transform:
@@ -21975,6 +22527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22049,6 +22605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22122,6 +22682,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
       propertyPath: m_Name
       value: Crate 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22242,7 +22806,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22396,6 +22960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerblock1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aed336ae30c70fb499929dd6ae8a188e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22482,7 +23050,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1632655932
 Transform:
@@ -22555,7 +23123,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
     m_Mode: 3
@@ -22598,7 +23166,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1634703535
@@ -22611,7 +23179,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22702,6 +23270,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22832,6 +23404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22893,6 +23469,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
       propertyPath: m_Name
       value: Crate 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23148,7 +23728,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1691425406
 Transform:
@@ -23322,6 +23902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23395,6 +23979,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23615,6 +24203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23689,6 +24281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23730,7 +24326,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0e4089029c20095081f0660e31f21eb, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::DebugUIController
   hover: {fileID: 440688731}
   speedText: {fileID: 459370787}
@@ -23759,7 +24355,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c07f3180e96971b09a8852693f596fdd, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: '::'
   mailSpawner: {fileID: 1735355940}
   pointsText: {fileID: 1566595608}
@@ -23774,7 +24370,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4090e5d06e19d9fdeaa8267eefd33066, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: '::'
   gameController: {fileID: 1735355939}
   mailPrefab: {fileID: 7715039236702346298, guid: b3df716feb0b089b09b36b34a4e4aad2, type: 3}
@@ -23789,7 +24385,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89975bbc2f4c08a818678619e1c4fdd1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::PauseController
   pauseMenuUI: {fileID: 651264132}
   inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -23803,7 +24399,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba21ae6b3a8b965e69be8d0d70af7b58, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreenController
   gameOverPanel: {fileID: 487785397}
 --- !u!1001 &1743396333
@@ -23870,6 +24466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23931,6 +24531,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
       propertyPath: m_Name
       value: Crate 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23994,6 +24598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24055,6 +24663,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
       propertyPath: m_Name
       value: Crate 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa73e0354c218d4b8c6a70a97cb9cf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24150,6 +24762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24207,7 +24823,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -24331,6 +24947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 272c3e2ccebb4c94cb87ea8dc38bcc15, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24396,6 +25016,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
       propertyPath: m_Name
       value: Bridge (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4e68609715d0474da3b061f6fce6402, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24564,6 +25188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24637,6 +25265,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3b44541796ad4df49b25d85f8e62e5db, type: 3}
       propertyPath: m_Name
       value: Tree 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b44541796ad4df49b25d85f8e62e5db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24774,6 +25406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24847,6 +25483,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
       propertyPath: m_Name
       value: buildingblock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25239,6 +25879,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building1_roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2810fef5cef9464caa44f48e4ff802b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25496,7 +26140,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
@@ -25527,7 +26171,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -25611,6 +26255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25672,6 +26320,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25809,6 +26461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25866,7 +26522,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -26063,6 +26719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e4ed9284fcf2e44883b6b752e7121d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26124,6 +26784,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
       propertyPath: m_Name
       value: Spruce 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26261,6 +26925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26322,6 +26990,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ff89227ad6d6450408f3e73d637a2d09, type: 3}
       propertyPath: m_Name
       value: building6 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ff89227ad6d6450408f3e73d637a2d09, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26397,6 +27069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock_roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7609b9b409daa174299203f9505b303d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26459,6 +27135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 468d79e002e0a314596365e418092773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26520,6 +27200,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
       propertyPath: m_Name
       value: Rock 1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74958432ae6aa194c9d7824bb28ba4b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26595,6 +27279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26669,6 +27357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingblock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec920df97a4e3f34e8ab8468adba03a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26693,7 +27385,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1980820809
 Transform:
@@ -26962,6 +27654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2_roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19129331ca4c69940b6f81e85e54ea05, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27023,6 +27719,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
       propertyPath: m_Name
       value: Crate 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8fb2fd71504437f4d857eb645c23205f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27097,6 +27797,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
       propertyPath: m_Name
       value: column
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27226,6 +27930,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2e2511a37e4d6334d93fff3d0c6176e6, type: 3}
       propertyPath: m_Name
       value: tower4_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e2511a37e4d6334d93fff3d0c6176e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27541,6 +28249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: column (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27670,6 +28382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4998cededf41e8c468ceb7f27aaef993, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27743,6 +28459,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
       propertyPath: m_Name
       value: Building2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27818,6 +28538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb0e3497e63e2d94499c4d4456cd75b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27891,6 +28615,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
       propertyPath: m_Name
       value: Spruce 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b06a0d522b50a44b9528a198656b4ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28131,6 +28859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ce43882d5b56b4b9a7efd101e04940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28368,6 +29100,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
       propertyPath: m_Name
       value: column (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4490a4da4799f4f44afb65000c648e4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28615,6 +29351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tower4_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e2511a37e4d6334d93fff3d0c6176e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28739,6 +29479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spruce 2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09d77987b3b25944f8b3de9aacb3b015, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28808,6 +29552,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6068f57f7c5d7f0479d7c7c7c5a351d5, type: 3}
       propertyPath: m_Name
       value: Bridge_tall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6068f57f7c5d7f0479d7c7c7c5a351d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28882,6 +29630,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
       propertyPath: m_Name
       value: Rock 2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4eee01b522bc244b2db05e79ca4394, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32840,7 +33592,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e98f737d5001432583a270e19751f880, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::Poses.ActiveRagdollController
   joints:
   - jointName: Hermes_Body_front
