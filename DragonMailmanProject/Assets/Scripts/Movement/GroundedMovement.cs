@@ -94,8 +94,11 @@ namespace Movement
             Vector3 displacement = hover.horizontalVelocity + Vector3.up * hover.verticalVelocity;
             Vector3 targetPos = hover.rb.position + displacement * Time.fixedDeltaTime;
 
-            targetPos = hover.ApplyHover(targetPos, ref hover.verticalVelocity, ref hover.horizontalVelocity);
+            // Solve wall collisions first on the horizontal path
             if (hover.collideGoal) targetPos = hover.SolveCollisions(hover.rb.position, targetPos);
+
+            // Then snap the resulting valid position down to the floor
+            targetPos = hover.ApplyHover(targetPos, ref hover.verticalVelocity, ref hover.horizontalVelocity);
 
             hover.rb.MovePosition(targetPos);
         }

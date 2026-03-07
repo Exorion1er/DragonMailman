@@ -128,31 +128,90 @@ namespace Movement
 
             Vector3 direction = path / distance;
 
-            if (rb.SweepTest(direction, out RaycastHit hit, distance + collisionSkin, QueryTriggerInteraction.Ignore))
+            bool hitObstacle = false;
+            RaycastHit validHit = new();
+            float closestDistance = Mathf.Infinity;
+
+            // Primary Check: SweepTestAll
+            RaycastHit[] hits = rb.SweepTestAll(direction, distance + collisionSkin, QueryTriggerInteraction.Ignore);
+            foreach (RaycastHit hit in hits)
             {
-                if (((1 << hit.collider.gameObject.layer) & obstacleLayers) == 0) return to;
+                if (((1 << hit.collider.gameObject.layer) & obstacleLayers) == 0 || !(hit.distance < closestDistance))
+                    continue;
 
-                OnObstacleHit?.Invoke();
+                closestDistance = hit.distance;
+                validHit = hit;
+                hitObstacle = true;
+            }
 
-                float moveDist = Mathf.Max(0, hit.distance - collisionSkin);
+            // If SweepTest is blind, back up and SphereCast
+            if (!hitObstacle)
+            {
+                // Start half a meter behind and half a meter up (to avoid scraping the floor)
+                Vector3 fallbackStart = from - direction * 0.5f + Vector3.up * 0.5f;
+
+                if (Physics.SphereCast(fallbackStart, 0.4f, direction, out RaycastHit sphereHit,
+                        distance + 0.5f + collisionSkin, obstacleLayers, QueryTriggerInteraction.Ignore))
+                {
+                    validHit = sphereHit;
+                    // Compensate for the fact that we started 0.5 meters backward
+                    validHit.distance = Mathf.Max(0, sphereHit.distance - 0.5f);
+                    hitObstacle = true;
+                }
+            }
+
+            if (hitObstacle)
+            {
+                // Only trigger a crash if we hit a wall while flying
+                if (!isGrounded) OnObstacleHit?.Invoke();
+
+                float moveDist = Mathf.Max(0, validHit.distance - collisionSkin);
                 Vector3 contactPoint = from + direction * moveDist;
 
                 if (!slideAlongWalls) return contactPoint;
 
                 Vector3 remainingPath = to - contactPoint;
-                Vector3 slidePath = Vector3.ProjectOnPlane(remainingPath, hit.normal);
+                Vector3 slidePath = Vector3.ProjectOnPlane(remainingPath, validHit.normal);
 
                 if (slidePath.magnitude < 0.001f) return contactPoint;
 
-                if (rb.SweepTest(slidePath.normalized, out RaycastHit slideHit, slidePath.magnitude + collisionSkin,
-                        QueryTriggerInteraction.Ignore))
+                // Slide Path Sweep
+                bool slideHitObstacle = false;
+                float closestSlideDist = Mathf.Infinity;
+                RaycastHit validSlideHit = new();
+
+                RaycastHit[] slideHits = rb.SweepTestAll(slidePath.normalized, slidePath.magnitude + collisionSkin,
+                    QueryTriggerInteraction.Ignore);
+                foreach (RaycastHit slideHit in slideHits)
                 {
-                    float slideDist = Mathf.Max(0, slideHit.distance - collisionSkin);
-                    return contactPoint + slidePath.normalized * slideDist;
+                    if (((1 << slideHit.collider.gameObject.layer) & obstacleLayers) == 0 ||
+                        !(slideHit.distance < closestSlideDist))
+                        continue;
+
+                    closestSlideDist = slideHit.distance;
+                    validSlideHit = slideHit;
+                    slideHitObstacle = true;
                 }
 
-                return contactPoint + slidePath;
+                // Slide Anti-Overlap Fallback
+                if (!slideHitObstacle)
+                {
+                    Vector3 slideFallbackStart = contactPoint - slidePath.normalized * 0.5f + Vector3.up * 0.5f;
+                    if (Physics.SphereCast(slideFallbackStart, 0.4f, slidePath.normalized,
+                            out RaycastHit slideSphereHit, slidePath.magnitude + 0.5f + collisionSkin, obstacleLayers,
+                            QueryTriggerInteraction.Ignore))
+                    {
+                        validSlideHit = slideSphereHit;
+                        validSlideHit.distance = Mathf.Max(0, slideSphereHit.distance - 0.5f);
+                        slideHitObstacle = true;
+                    }
+                }
+
+                if (!slideHitObstacle) return contactPoint + slidePath;
+                float slideDist = Mathf.Max(0, validSlideHit.distance - collisionSkin);
+                return contactPoint + slidePath.normalized * slideDist;
             }
+
             return to;
         }
     }
