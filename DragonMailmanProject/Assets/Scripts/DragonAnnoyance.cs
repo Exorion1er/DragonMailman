@@ -113,11 +113,11 @@ public class DragonAnnoyance : MonoBehaviour
         AddAnnoyance(severity * sharpTurnPenaltyMultiplier * Time.deltaTime);
     }
 
-    public void FeedDragon(float foodValue)
+    public void ReduceAnnoyance(float amount)
     {
         if (isBuckedOff) return;
 
-        currentAnnoyance -= foodValue;
+        currentAnnoyance -= amount;
         currentAnnoyance = Mathf.Max(0f, currentAnnoyance);
 
         UpdateUI();

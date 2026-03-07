@@ -9641,7 +9641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649052429}
   m_Layer: 0
-  m_Name: MailSpawnPoints
+  m_Name: Mail Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18931,6 +18931,7 @@ Transform:
   m_Children:
   - {fileID: 649052429}
   - {fileID: 809295056}
+  - {fileID: 2103035706}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1348139407 stripped
@@ -24386,6 +24387,7 @@ GameObject:
   - component: {fileID: 1735355937}
   - component: {fileID: 1735355939}
   - component: {fileID: 1735355940}
+  - component: {fileID: 1735355943}
   - component: {fileID: 1735355941}
   - component: {fileID: 1735355942}
   m_Layer: 0
@@ -24436,9 +24438,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07f3180e96971b09a8852693f596fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mailSpawner: {fileID: 1735355940}
-  pointsText: {fileID: 1566595608}
   points: 0
+  pointsText: {fileID: 1566595608}
+  dragonAnnoyance: {fileID: 440688732}
+  mailSpawner: {fileID: 1735355940}
+  foodSpawner: {fileID: 1735355943}
+  foodSpawnCount: 5
+  foodAnnoyanceReductionAmount: 20
 --- !u!114 &1735355940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24452,8 +24458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   gameController: {fileID: 1735355939}
-  mailPrefab: {fileID: 7715039236702346298, guid: b3df716feb0b089b09b36b34a4e4aad2, type: 3}
-  mailParent: {fileID: 649052428}
+  entityPrefab: {fileID: 7715039236702346298, guid: b3df716feb0b089b09b36b34a4e4aad2, type: 3}
+  entitiesParent: {fileID: 649052428}
 --- !u!114 &1735355941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24481,6 +24487,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreenController
   gameOverPanel: {fileID: 487785397}
+--- !u!114 &1735355943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735355936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4090e5d06e19d9fdeaa8267eefd33066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity.EntitySpawner
+  gameController: {fileID: 1735355939}
+  entityPrefab: {fileID: 6626288662453544985, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+  entitiesParent: {fileID: 2103035705}
 --- !u!4 &1738138133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 514399502068958976, guid: d1a5a91216817b8848d365622e1ed9b0, type: 3}
@@ -25341,6 +25362,68 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!1001 &1876919066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2103035706}
+    m_Modifications:
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 567.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 54.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -262.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626288662453544985, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+      propertyPath: m_Name
+      value: Food
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+--- !u!4 &1876919067 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1926208978110147973, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
+  m_PrefabInstance: {fileID: 1876919066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1877301280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28764,6 +28847,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4602686692480342188, guid: 937b5d1096218dbc59dd0efc8b90f0c2, type: 3}
   m_PrefabInstance: {fileID: 1346503848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2103035705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103035706}
+  m_Layer: 0
+  m_Name: Food Spawn Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2103035706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103035705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1876919067}
+  m_Father: {fileID: 1346788658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2103617610
 PrefabInstance:
   m_ObjectHideFlags: 0

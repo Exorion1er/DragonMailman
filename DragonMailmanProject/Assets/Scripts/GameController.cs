@@ -6,11 +6,16 @@ public class GameController : MonoBehaviour
 {
     public int points;
     public TextMeshProUGUI pointsText;
+    public DragonAnnoyance dragonAnnoyance;
     public EntitySpawner mailSpawner;
+    public EntitySpawner foodSpawner;
+    public int foodSpawnCount;
+    public float foodAnnoyanceReductionAmount;
 
     private void Start()
     {
         mailSpawner.SpawnRandomEntity(1);
+        foodSpawner.SpawnRandomEntity(foodSpawnCount);
     }
 
     private void Update()
@@ -22,5 +27,11 @@ public class GameController : MonoBehaviour
     {
         points++;
         mailSpawner.SpawnRandomEntity(1);
+    }
+
+    public void FoodPickedUp()
+    {
+        dragonAnnoyance.ReduceAnnoyance(foodAnnoyanceReductionAmount);
+        foodSpawner.SpawnRandomEntity(1);
     }
 }
