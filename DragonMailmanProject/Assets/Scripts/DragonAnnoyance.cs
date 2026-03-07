@@ -91,7 +91,7 @@ public class DragonAnnoyance : MonoBehaviour
 
     private void HandleCollision()
     {
-        if (isBuckedOff) return;
+        if (isBuckedOff || !flying.enabled) return;
 
         float impactVelocity = (hover.horizontalVelocity + Vector3.up * hover.verticalSnapSpeed).magnitude;
 
