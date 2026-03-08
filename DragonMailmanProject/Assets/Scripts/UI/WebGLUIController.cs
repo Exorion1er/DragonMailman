@@ -7,7 +7,7 @@ namespace UI
         public GameObject pauseQtd;
         public GameObject gameOverQtd;
         public GameObject pauseText;
-        public GameObject pausePanel;
+        public PauseMenuController pauseMenu;
 
 #if UNITY_WEBGL
         private void Start()
@@ -15,7 +15,7 @@ namespace UI
             if (pauseQtd) pauseQtd.SetActive(false);
             if (gameOverQtd) gameOverQtd.SetActive(false);
             if (pauseText) pauseText.SetActive(true);
-            if (pausePanel) pausePanel.SetActive(true);
+            pauseMenu.Pause();
         }
 #endif
     }
