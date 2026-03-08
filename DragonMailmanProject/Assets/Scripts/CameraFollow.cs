@@ -5,20 +5,17 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public InputActionAsset inputAsset;
-
     public float distance;
     public float sensitivity;
+    public float webGLMultiplier;
     public float smoothTime;
-
     public float minVerticalAngle;
     public float maxVerticalAngle;
-
     public LayerMask collisionLayers;
     public float cameraRadius;
     private Vector3 currentRotation;
 
     private InputAction lookAction;
-
     private float rotationX;
     private float rotationY;
     private Vector3 smoothingVelocity;
@@ -37,6 +34,10 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         Vector2 mouseDelta = lookAction.ReadValue<Vector2>();
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        mouseDelta *= webGLMultiplier;
+#endif
 
         rotationX += mouseDelta.x * sensitivity;
         rotationY -= mouseDelta.y * sensitivity;
