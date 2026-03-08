@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public InputActionAsset inputAsset;
     public Slider sensitivitySlider;
+    public TextMeshProUGUI sensitivityText;
     public float distance;
     public float sensitivity;
     public float smoothTime;
@@ -32,6 +34,7 @@ public class CameraFollow : MonoBehaviour
         Cursor.visible = false;
         sensitivity = PlayerPrefs.GetFloat("sensitivity", 0.2f);
         sensitivitySlider.value = sensitivity;
+        sensitivityText.text = $"Sensitivity {sensitivity:F2}";
     }
 
     private void Update()
@@ -79,5 +82,6 @@ public class CameraFollow : MonoBehaviour
     {
         sensitivity = newValue;
         PlayerPrefs.SetFloat("sensitivity", newValue);
+        sensitivityText.text = $"Sensitivity {sensitivity:F2}";
     }
 }
