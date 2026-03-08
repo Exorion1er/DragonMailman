@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        pointsText.text = $"Points: {points}";
+        pointsText.text = points.ToString();
     }
 
     public void EntityPickedUp(PickupType type)
