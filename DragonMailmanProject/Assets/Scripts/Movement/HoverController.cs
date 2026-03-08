@@ -91,7 +91,8 @@ namespace Movement
             if (!flyingInstance.isValid()) return;
 
             float currentSpeed = (horizontalVelocity + Vector3.up * verticalVelocity).magnitude;
-            flyingInstance.setParameterByName("SPEED", currentSpeed);
+            float speedParam = Mathf.InverseLerp(0f, flyingMovement.maxFlightSpeed, currentSpeed) * 100f;
+            flyingInstance.setParameterByName("SPEED", speedParam);
             flyingInstance.set3DAttributes(gameObject.To3DAttributes());
         }
 
