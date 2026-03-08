@@ -301,7 +301,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 4806720b78bff4021b3497ed9a2e55f9, type: 3}
+      m_Icon: {fileID: 2800000, guid: e169edd9c9c79a4019b2260cee91adca, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -555,7 +555,8 @@ PlayerSettings:
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  m_TemplateCustomTags: {}
+  m_TemplateCustomTags:
+    PRODUCT_DESCRIPTION: 
   mobileMTRendering:
     Android: 1
     iPhone: 1
