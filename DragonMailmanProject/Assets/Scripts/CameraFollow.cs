@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public InputActionAsset inputAsset;
+    public Slider sensitivitySlider;
     public float distance;
     public float sensitivity;
-    public float webGLMultiplier;
     public float smoothTime;
     public float minVerticalAngle;
     public float maxVerticalAngle;
@@ -29,15 +30,13 @@ public class CameraFollow : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        sensitivity = PlayerPrefs.GetFloat("sensitivity", 0.2f);
+        sensitivitySlider.value = sensitivity;
     }
 
     private void Update()
     {
         Vector2 mouseDelta = lookAction.ReadValue<Vector2>();
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-        mouseDelta *= webGLMultiplier;
-#endif
 
         rotationX += mouseDelta.x * sensitivity;
         rotationY -= mouseDelta.y * sensitivity;
@@ -74,5 +73,11 @@ public class CameraFollow : MonoBehaviour
     private void OnDisable()
     {
         lookAction.Disable();
+    }
+
+    public void OnSensitivityChanged(float newValue)
+    {
+        sensitivity = newValue;
+        PlayerPrefs.SetFloat("sensitivity", newValue);
     }
 }

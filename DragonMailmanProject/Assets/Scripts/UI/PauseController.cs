@@ -25,15 +25,9 @@ namespace UI
             if (pauseAction.WasPressedThisFrame()) SwitchPause();
         }
 
-        private void OnEnable()
-        {
-            pauseAction.Enable();
-        }
+        private void OnEnable() => pauseAction.Enable();
 
-        private void OnDisable()
-        {
-            pauseAction.Disable();
-        }
+        private void OnDisable() => pauseAction.Disable();
 
         private void SwitchPause()
         {
@@ -50,6 +44,7 @@ namespace UI
             Time.timeScale = 0f;
             isPaused = true;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         public void OnClickResume()
@@ -59,6 +54,7 @@ namespace UI
             Time.timeScale = 1f;
             isPaused = false;
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         public void OnClickQuitToMainMenu()

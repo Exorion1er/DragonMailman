@@ -16,7 +16,6 @@ namespace UI
         public void ShowGameOverScreen()
         {
             gameOverPanel.SetActive(true);
-
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
