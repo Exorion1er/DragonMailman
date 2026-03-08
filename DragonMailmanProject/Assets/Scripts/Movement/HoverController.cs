@@ -121,7 +121,7 @@ namespace Movement
             {
                 float floorY = hit.point.y + hoverHeight;
 
-                if (targetPos.y <= floorY + 0.1f)
+                if (targetPos.y <= floorY + 1f)
                 {
                     // Calculate our total speed right before hitting the ground
                     float currentSpeed = (hVelocity + Vector3.up * vSpeed).magnitude;
