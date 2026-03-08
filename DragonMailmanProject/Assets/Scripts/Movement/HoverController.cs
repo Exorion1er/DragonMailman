@@ -15,6 +15,7 @@ namespace Movement
         public FlyingMovement flyingMovement;
         public GroundedMovement groundedMovement;
         public PoseController poseController;
+        public DragonAnnoyance dragonAnnoyance;
         public EventReference collisionSfx;
         public EventReference flyingSfx;
 
@@ -24,6 +25,7 @@ namespace Movement
         public float hoverRayLength = 3f;
         public float verticalSnapSpeed = 5f;
         public LayerMask groundLayers;
+        public LayerMask waterLayer;
         public float maxLandingSpeed = 25f;
         public bool crashOnHardLanding = true;
 
@@ -119,6 +121,12 @@ namespace Movement
             if (Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, hoverRayLength, groundLayers,
                     QueryTriggerInteraction.Ignore))
             {
+                if (((1 << hit.collider.gameObject.layer) & waterLayer) != 0)
+                {
+                    StartCoroutine(dragonAnnoyance.GameOverSequence());
+                    return targetPos;
+                }
+
                 float floorY = hit.point.y + hoverHeight;
 
                 if (targetPos.y <= floorY + 1f)

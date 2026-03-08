@@ -205,7 +205,7 @@ public class DragonAnnoyance : MonoBehaviour
         instance.release();
     }
 
-    private IEnumerator GameOverSequence()
+    public IEnumerator GameOverSequence()
     {
         flying.enabled = false;
         grounded.enabled = false;
