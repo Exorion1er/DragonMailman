@@ -108,7 +108,7 @@ namespace Movement
             isCharging = false;
             currentChargeTime = 0f;
 
-            chargeBarParent.SetActive(false);
+            if (chargeBarParent) chargeBarParent.SetActive(false);
         }
 
         private void ExecuteLaunch()
