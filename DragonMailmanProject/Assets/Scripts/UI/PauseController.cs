@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ namespace UI
     {
         public GameObject pauseMenuUI;
         public InputActionAsset inputAsset;
+        public StudioEventEmitter musicEmitter;
 
         private bool isPaused;
         private InputAction pauseAction;
@@ -18,40 +20,45 @@ namespace UI
             pauseAction = inputAsset.FindActionMap("UI").FindAction("cancel");
         }
 
+        private void Update()
+        {
+            if (pauseAction.WasPressedThisFrame()) SwitchPause();
+        }
+
         private void OnEnable()
         {
             pauseAction.Enable();
-            pauseAction.performed += _ => DeterminePauseState();
         }
 
         private void OnDisable()
         {
             pauseAction.Disable();
-            pauseAction.performed -= _ => DeterminePauseState();
         }
 
-        private void DeterminePauseState()
+        private void SwitchPause()
         {
             if (isPaused)
-                Resume();
+                OnClickResume();
             else
                 Pause();
-        }
-
-        public void Resume()
-        {
-            pauseMenuUI.SetActive(false);
-            Time.timeScale = 1f;
-            isPaused = false;
-            Cursor.lockState = CursorLockMode.Locked;
         }
 
         public void Pause()
         {
             pauseMenuUI.SetActive(true);
+            musicEmitter.SetParameter("PAUSE", 1);
             Time.timeScale = 0f;
             isPaused = true;
             Cursor.lockState = CursorLockMode.None;
+        }
+
+        public void OnClickResume()
+        {
+            pauseMenuUI.SetActive(false);
+            musicEmitter.SetParameter("PAUSE", 0);
+            Time.timeScale = 1f;
+            isPaused = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         public void OnClickQuitToMainMenu()
