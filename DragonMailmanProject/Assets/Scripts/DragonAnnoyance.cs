@@ -1,9 +1,11 @@
 using System.Collections;
+using FMODUnity;
 using Movement;
 using UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class DragonAnnoyance : MonoBehaviour
 {
@@ -55,9 +57,21 @@ public class DragonAnnoyance : MonoBehaviour
 
     [Header("--- Events ---")]
     public UnityEvent onPlayerBuckedOff;
-    private bool isBuckedOff;
 
+    [Header("--- SFX ---")]
+    public EventReference tameSfx;
+    public EventReference annoyedSfx;
+    public EventReference furiousSfx;
+    public EventReference buckedOffSfx;
+
+    private bool isBuckedOff;
     private float lastCollisionTime;
+    private AnnoyanceState lastState;
+
+    private void Awake()
+    {
+        lastState = AnnoyanceState.Tame;
+    }
 
     private void Update()
     {
@@ -150,12 +164,35 @@ public class DragonAnnoyance : MonoBehaviour
         cursorPos.x = Mathf.Lerp(cursorMinX, cursorMaxX, fillAmount);
         dragonCursor.anchoredPosition = cursorPos;
 
-        dragonCursorImage.sprite = fillAmount switch
+        AnnoyanceState currentState = fillAmount switch
         {
-            < 0.33f => tameSprite,
-            < 0.66f => annoyedSprite,
-            _ => furiousSprite
+            < 0.33f => AnnoyanceState.Tame,
+            < 0.66f => AnnoyanceState.Annoyed,
+            _ => AnnoyanceState.Furious
         };
+
+        if (currentState == lastState) return;
+        TriggerStateChange(currentState);
+        lastState = currentState;
+    }
+
+    private void TriggerStateChange(AnnoyanceState newState)
+    {
+        switch (newState)
+        {
+            case AnnoyanceState.Tame:
+                dragonCursorImage.sprite = tameSprite;
+                RuntimeManager.PlayOneShot(tameSfx);
+                break;
+            case AnnoyanceState.Annoyed:
+                dragonCursorImage.sprite = annoyedSprite;
+                RuntimeManager.PlayOneShot(annoyedSfx);
+                break;
+            case AnnoyanceState.Furious:
+                dragonCursorImage.sprite = furiousSprite;
+                RuntimeManager.PlayOneShot(furiousSfx);
+                break;
+        }
     }
 
     private IEnumerator GameOverSequence()
@@ -173,6 +210,7 @@ public class DragonAnnoyance : MonoBehaviour
         mailman.SetParent(null);
         mailmanRB.AddForce(Vector3.up * ejectUpwardForce, ForceMode.VelocityChange);
         dragonRB.AddForce(transform.forward * ejectForwardForce, ForceMode.VelocityChange);
+        RuntimeManager.PlayOneShot(buckedOffSfx);
 
         // Add random spin
         Vector3 randomTorque =
