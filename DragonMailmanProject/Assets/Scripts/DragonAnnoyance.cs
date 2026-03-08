@@ -1,4 +1,5 @@
 using System.Collections;
+using FMOD.Studio;
 using FMODUnity;
 using Movement;
 using UI;
@@ -182,17 +183,26 @@ public class DragonAnnoyance : MonoBehaviour
         {
             case AnnoyanceState.Tame:
                 dragonCursorImage.sprite = tameSprite;
-                RuntimeManager.PlayOneShot(tameSfx);
+                PlaySoundWithParam(tameSfx, "LEVEL", "1");
                 break;
             case AnnoyanceState.Annoyed:
                 dragonCursorImage.sprite = annoyedSprite;
-                RuntimeManager.PlayOneShot(annoyedSfx);
+                PlaySoundWithParam(tameSfx, "LEVEL", "2");
                 break;
             case AnnoyanceState.Furious:
                 dragonCursorImage.sprite = furiousSprite;
-                RuntimeManager.PlayOneShot(furiousSfx);
+                PlaySoundWithParam(tameSfx, "LEVEL", "3");
                 break;
         }
+    }
+
+    private void PlaySoundWithParam(EventReference report, string paramName, string value)
+    {
+        EventInstance instance = RuntimeManager.CreateInstance(report);
+        instance.setParameterByNameWithLabel(paramName, value);
+        instance.set3DAttributes(gameObject.To3DAttributes());
+        instance.start();
+        instance.release();
     }
 
     private IEnumerator GameOverSequence()
