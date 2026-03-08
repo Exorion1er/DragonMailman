@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,7 @@ namespace Movement
         public InputActionAsset inputAsset;
         public GameObject chargePrefab;
         public Transform chargesParent;
+        public EventReference boostSfx;
 
         [Header("Boost Settings")]
         public int chargesCount = 3;
@@ -101,6 +103,7 @@ namespace Movement
                     cooldownTimers[i] = boostCooldown;
                     boostCharges[i].SetFill(0f);
                     flying.ApplySpeedBoost(boostAmount);
+                    RuntimeManager.PlayOneShot(boostSfx);
                     break;
                 }
             }

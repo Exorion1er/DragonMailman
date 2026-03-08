@@ -9461,6 +9461,13 @@ MonoBehaviour:
   inputAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   chargePrefab: {fileID: 7436772409577002406, guid: 010b10bc3224ffb269e1915a1dc80444, type: 3}
   chargesParent: {fileID: 174470723}
+  boostSfx:
+    Guid:
+      Data1: -179624424
+      Data2: 1136072745
+      Data3: 1882267044
+      Data4: 976810513
+    Path: event:/SFX/GAME/BOOST
   chargesCount: 3
   boostAmount: 30
   boostCooldown: 3
@@ -35636,6 +35643,7 @@ GameObject:
   - component: {fileID: 1735355943}
   - component: {fileID: 1735355941}
   - component: {fileID: 1735355942}
+  - component: {fileID: 1735355944}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -35677,6 +35685,20 @@ MonoBehaviour:
   foodSpawner: {fileID: 1735355943}
   foodSpawnCount: 5
   foodAnnoyanceReductionAmount: 20
+  eatSfx:
+    Guid:
+      Data1: 64313003
+      Data2: 1077700199
+      Data3: -1526423366
+      Data4: 977528720
+    Path: event:/SFX/GAME/EAT FOOD
+  mailPickupSfx:
+    Guid:
+      Data1: 1000143210
+      Data2: 1124719049
+      Data3: 977696386
+      Data4: 1860507003
+    Path: event:/SFX/GAME/PICK UP LETTER
 --- !u!114 &1735355940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35734,6 +35756,37 @@ MonoBehaviour:
   gameController: {fileID: 1735355939}
   entityPrefab: {fileID: 6626288662453544985, guid: 48ed0f6775e80c3ed89de7f5bad22894, type: 3}
   entitiesParent: {fileID: 2103035705}
+--- !u!114 &1735355944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735355936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -638218548
+      Data2: 1270162236
+      Data3: 414584995
+      Data4: 1960928041
+    Path: event:/MUSIC/GAMEPLAY
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &1738138133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 514399502068958976, guid: d1a5a91216817b8848d365622e1ed9b0, type: 3}
