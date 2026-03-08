@@ -1,7 +1,9 @@
 using System;
+using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Movement
 {
@@ -13,6 +15,8 @@ namespace Movement
         public FlyingMovement flyingMovement;
         public GroundedMovement groundedMovement;
         public PoseController poseController;
+        public EventReference collisionSfx;
+        public EventReference flyingSfx;
 
         [Header("--- Landing & Hover ---")]
         public bool enableHover = true;
@@ -28,7 +32,6 @@ namespace Movement
         public LayerMask obstacleLayers;
         public float collisionSkin = 0.05f;
         public bool slideAlongWalls = true;
-        public EventReference collisionSfx;
 
         [HideInInspector]
         public bool isGrounded;
@@ -37,6 +40,7 @@ namespace Movement
         [HideInInspector]
         public float verticalVelocity;
 
+        private EventInstance flyingInstance;
         private InputActionMap playerMap;
 
         private void Awake()
@@ -46,23 +50,59 @@ namespace Movement
 
         private void Update()
         {
-            // Switch which script is active based on grounding
-            if (isGrounded && !groundedMovement.enabled)
+            UpdateFlyingSfx();
+
+            switch (isGrounded)
             {
-                groundedMovement.enabled = true;
-                flyingMovement.enabled = false;
-                poseController.SetHoverPose();
-            }
-            else if (!isGrounded && !flyingMovement.enabled)
-            {
-                groundedMovement.enabled = false;
-                flyingMovement.enabled = true;
-                poseController.SetFlyPose();
+                // Switch which script is active based on grounding
+                case true when !groundedMovement.enabled:
+                    StopFlyingSfx();
+                    groundedMovement.enabled = true;
+                    flyingMovement.enabled = false;
+                    poseController.SetHoverPose();
+                    break;
+                case false when !flyingMovement.enabled:
+                    StartFlyingSfx();
+                    groundedMovement.enabled = false;
+                    flyingMovement.enabled = true;
+                    poseController.SetFlyPose();
+                    break;
             }
         }
 
         private void OnEnable() => playerMap?.Enable();
-        private void OnDisable() => playerMap?.Disable();
+
+        private void OnDisable()
+        {
+            playerMap?.Disable();
+            StopFlyingSfx();
+        }
+
+        private void StartFlyingSfx()
+        {
+            if (flyingInstance.isValid()) return;
+
+            flyingInstance = RuntimeManager.CreateInstance(flyingSfx);
+            flyingInstance.start();
+        }
+
+        private void UpdateFlyingSfx()
+        {
+            if (!flyingInstance.isValid()) return;
+
+            float currentSpeed = (horizontalVelocity + Vector3.up * verticalVelocity).magnitude;
+            flyingInstance.setParameterByName("SPEED", currentSpeed);
+            flyingInstance.set3DAttributes(gameObject.To3DAttributes());
+        }
+
+        private void StopFlyingSfx()
+        {
+            if (!flyingInstance.isValid()) return;
+
+            flyingInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            flyingInstance.release();
+            flyingInstance.clearHandle();
+        }
 
         public event Action OnObstacleHit;
 
