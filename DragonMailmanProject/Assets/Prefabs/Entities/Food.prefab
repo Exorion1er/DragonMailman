@@ -87,8 +87,8 @@ MonoBehaviour:
   idle: {fileID: 2415094407696507489}
   beam: {fileID: 0}
   pickupType: 1
-  initialSpeed: 50
-  acceleration: 75
+  initialSpeed: 100
+  acceleration: 50
   maxSpeed: 500
   pickupDistance: 0.3
   tumbleDegreesPerSecond: 0
