@@ -11,11 +11,19 @@ namespace UI
         public GameObject controlsPanel;
         public RectTransform controlsLetter;
         public GameObject acceptButton;
+        public GameObject quitButton;
         public GameObject stamp;
         public float timeBeforeSlideUp;
         public float animationDuration;
         public float timeBeforeStarting;
         public float yEndOffset;
+
+#if UNITY_WEBGL
+        private void Start()
+        {
+            if (quitButton) quitButton.SetActive(false);
+        }
+#endif
 
         public void OnClickStart()
         {
