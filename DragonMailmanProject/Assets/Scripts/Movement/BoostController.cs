@@ -11,6 +11,7 @@ namespace Movement
         public HoverController hover;
         public FlyingMovement flying;
         public InputActionAsset inputAsset;
+        public DragonAnnoyance dragonAnnoyance;
         public GameObject chargePrefab;
         public Transform chargesParent;
         public EventReference boostSfx;
@@ -19,6 +20,7 @@ namespace Movement
         public int chargesCount = 3;
         public float boostAmount = 10f;
         public float boostCooldown = 3f;
+        public float annoyanceAmount;
 
         private InputAction boostAction;
         private List<BoostChargeHook> boostCharges;
@@ -103,6 +105,7 @@ namespace Movement
                     cooldownTimers[i] = boostCooldown;
                     boostCharges[i].SetFill(0f);
                     flying.ApplySpeedBoost(boostAmount);
+                    dragonAnnoyance.AddAnnoyance(annoyanceAmount);
                     RuntimeManager.PlayOneShot(boostSfx);
                     break;
                 }

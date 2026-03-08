@@ -141,7 +141,7 @@ public class DragonAnnoyance : MonoBehaviour
         UpdateUI();
     }
 
-    private void AddAnnoyance(float amount)
+    public void AddAnnoyance(float amount)
     {
         currentAnnoyance += amount;
         currentAnnoyance = Mathf.Clamp(currentAnnoyance, 0f, maxAnnoyance);
