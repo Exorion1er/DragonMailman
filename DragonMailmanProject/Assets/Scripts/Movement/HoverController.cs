@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,6 +28,7 @@ namespace Movement
         public LayerMask obstacleLayers;
         public float collisionSkin = 0.05f;
         public bool slideAlongWalls = true;
+        public EventReference collisionSfx;
 
         [HideInInspector]
         public bool isGrounded;
@@ -163,7 +165,11 @@ namespace Movement
             if (hitObstacle)
             {
                 // Only trigger a crash if we hit a wall while flying
-                if (!isGrounded) OnObstacleHit?.Invoke();
+                if (!isGrounded)
+                {
+                    RuntimeManager.PlayOneShot(collisionSfx);
+                    OnObstacleHit?.Invoke();
+                }
 
                 float moveDist = Mathf.Max(0, validHit.distance - collisionSkin);
                 Vector3 contactPoint = from + direction * moveDist;
