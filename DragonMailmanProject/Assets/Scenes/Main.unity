@@ -1893,6 +1893,7 @@ GameObject:
   - component: {fileID: 91455103}
   - component: {fileID: 91455102}
   - component: {fileID: 91455101}
+  - component: {fileID: 91455104}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -2014,6 +2015,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91455099}
   m_CullTransparentMesh: 1
+--- !u!114 &91455104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91455099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1364286426
+      Data2: 1244848285
+      Data3: -1663182430
+      Data4: -829416346
+    Path: event:/SFX/UI/MOUSE CLICK
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CLICK
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &93269265
 GameObject:
   m_ObjectHideFlags: 0
@@ -4033,6 +4067,7 @@ GameObject:
   - component: {fileID: 181687215}
   - component: {fileID: 181687214}
   - component: {fileID: 181687213}
+  - component: {fileID: 181687216}
   m_Layer: 5
   m_Name: QuitToMainMenu
   m_TagString: Untagged
@@ -4154,6 +4189,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181687211}
   m_CullTransparentMesh: 1
+--- !u!114 &181687216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181687211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1364286426
+      Data2: 1244848285
+      Data3: -1663182430
+      Data4: -829416346
+    Path: event:/SFX/UI/MOUSE CLICK
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CLICK
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &186399811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10276,6 +10344,7 @@ GameObject:
   - component: {fileID: 487785398}
   - component: {fileID: 487785400}
   - component: {fileID: 487785399}
+  - component: {fileID: 487785401}
   m_Layer: 5
   m_Name: Game Over
   m_TagString: Untagged
@@ -10344,6 +10413,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487785397}
   m_CullTransparentMesh: 1
+--- !u!114 &487785401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487785397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -912457375
+      Data2: 1144707641
+      Data3: -2033215336
+      Data4: -1204154876
+    Path: event:/SFX/UI/LEVEL FAIL
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &488157025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1810856823671844504, guid: e7bb495d811735940ac31ae13f3d67d9, type: 3}
@@ -12313,6 +12413,7 @@ GameObject:
   - component: {fileID: 608965683}
   - component: {fileID: 608965682}
   - component: {fileID: 608965681}
+  - component: {fileID: 608965684}
   m_Layer: 5
   m_Name: QuitToDesktop
   m_TagString: Untagged
@@ -12434,6 +12535,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608965679}
   m_CullTransparentMesh: 1
+--- !u!114 &608965684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608965679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1364286426
+      Data2: 1244848285
+      Data3: -1663182430
+      Data4: -829416346
+    Path: event:/SFX/UI/MOUSE CLICK
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CLICK
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &611966785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8033133766981765996, guid: e1736183a41c3640c8fc65f960c83420, type: 3}
@@ -13454,6 +13588,7 @@ GameObject:
   - component: {fileID: 651264133}
   - component: {fileID: 651264135}
   - component: {fileID: 651264134}
+  - component: {fileID: 651264136}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -13523,6 +13658,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651264132}
   m_CullTransparentMesh: 1
+--- !u!114 &651264136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651264132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1910421499
+      Data2: 1280236784
+      Data3: 1621202311
+      Data4: 1613062053
+    Path: snapshot:/PAUSE
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &652700462
 GameObject:
   m_ObjectHideFlags: 0
@@ -14620,6 +14786,7 @@ GameObject:
   - component: {fileID: 701769196}
   - component: {fileID: 701769195}
   - component: {fileID: 701769194}
+  - component: {fileID: 701769197}
   m_Layer: 5
   m_Name: QuitToMainMenu
   m_TagString: Untagged
@@ -14741,6 +14908,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701769192}
   m_CullTransparentMesh: 1
+--- !u!114 &701769197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701769192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1364286426
+      Data2: 1244848285
+      Data3: -1663182430
+      Data4: -829416346
+    Path: event:/SFX/UI/MOUSE CLICK
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CLICK
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &704266327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21772,6 +21972,7 @@ GameObject:
   - component: {fileID: 1091999595}
   - component: {fileID: 1091999594}
   - component: {fileID: 1091999593}
+  - component: {fileID: 1091999596}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -21893,6 +22094,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091999591}
   m_CullTransparentMesh: 1
+--- !u!114 &1091999596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091999591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1364286426
+      Data2: 1244848285
+      Data3: -1663182430
+      Data4: -829416346
+    Path: event:/SFX/UI/MOUSE CLICK
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CLICK
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1093742303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33732,6 +33966,7 @@ GameObject:
   - component: {fileID: 1634703536}
   - component: {fileID: 1634703535}
   - component: {fileID: 1634703534}
+  - component: {fileID: 1634703537}
   m_Layer: 5
   m_Name: QuitToDesktop
   m_TagString: Untagged
@@ -33853,6 +34088,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634703532}
   m_CullTransparentMesh: 1
+--- !u!114 &1634703537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634703532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1364286426
+      Data2: 1244848285
+      Data3: -1663182430
+      Data4: -829416346
+    Path: event:/SFX/UI/MOUSE CLICK
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CLICK
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1642805752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35783,7 +36051,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   NonRigidbodyVelocity: 0
-  Params: []
+  Params:
+  - Name: PAUSE
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
