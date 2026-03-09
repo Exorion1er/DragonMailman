@@ -1,4 +1,5 @@
 using System.Collections;
+using FMODUnity;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,9 @@ namespace UI
         public float animationDuration;
         public float timeBeforeStarting;
         public float yEndOffset;
+        public EventReference letterOpenSfx;
+        public EventReference letterSlideSfx;
+        public EventReference stampSfx;
 
 #if UNITY_WEBGL
         private void Start()
@@ -28,6 +32,7 @@ namespace UI
         public void OnClickStart()
         {
             controlsPanel.SetActive(true);
+            RuntimeManager.PlayOneShot(letterOpenSfx);
             StartCoroutine(AnimateLetter());
         }
 
@@ -42,6 +47,7 @@ namespace UI
                 elapsed += Time.deltaTime;
                 yield return null;
             }
+            RuntimeManager.PlayOneShot(letterSlideSfx);
 
             elapsed = 0;
             while (elapsed < animationDuration)
@@ -62,6 +68,7 @@ namespace UI
         {
             acceptButton.SetActive(false);
             stamp.SetActive(true);
+            RuntimeManager.PlayOneShot(stampSfx);
             StartCoroutine(AnimateAccept());
         }
 

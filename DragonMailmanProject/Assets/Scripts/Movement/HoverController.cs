@@ -215,7 +215,8 @@ namespace Movement
                 // Only trigger a crash if we hit a wall while flying
                 if (!isGrounded)
                 {
-                    RuntimeManager.PlayOneShot(collisionSfx);
+                    if (((1 << validHit.collider.gameObject.layer) & waterLayer) == 0)
+                        RuntimeManager.PlayOneShot(collisionSfx);
                     OnObstacleHit?.Invoke();
                 }
 
